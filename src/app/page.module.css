@@ -1,0 +1,9 @@
+.menuBarHeight {
+    height: var(--menu-primary-height);
+    transition: 0.5s;
+}
+
+.menuBarHeightThin {
+    height: var(--menu-primary-height-thin) !important;
+    transition: 0.5s;
+}
