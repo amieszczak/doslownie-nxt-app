@@ -17,9 +17,9 @@ export default function LandingPageOffer() {
             <Markup variant={'right'} title={'oferta'}/>
             {/* <h1 className="absolute">Neurologopedia Dosłownie</h1> */}
             <div className="w-1/2">
-                {OFFER_CONTENT.map(item => {
+                {OFFER_CONTENT.map((item, index) => {
                     return(
-                        <>{item.title}</>
+                        <p key={index}>{item.title}</p>
                     )
                 })}
             </div>
