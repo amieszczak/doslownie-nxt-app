@@ -1,13 +1,13 @@
 import LandingPageVideo from "./components/landingPage/video/landingPageVideo";
 import LandingPageOffer from "./components/landingPage/offer/landingPageOffer";
-/* import TitleSlider from "./components/landingPage/titleSlider/titleSlider"; */
+import LandingPageTeamComponent from "./components/landingPage/team/landingPageTeamComponent";
 
 export default function Home() {
   return (
     <>
       <LandingPageVideo/>
-      {/* <TitleSlider/> */}
       <LandingPageOffer/>
+      <LandingPageTeamComponent/>
     </>
   );
 }
