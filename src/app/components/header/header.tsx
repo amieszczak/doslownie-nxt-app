@@ -16,7 +16,7 @@ export default function Header() {
     const [isDropdownOpened, setDropdownOpened] = useState(false);
     const [menuTransform, setMenuTransform] = useState(false);
 
-    const Links = [
+    const Links: Array<{title : string, href : string, offerPages? : Array<{title : string, href : string}>}> = [
         { title: 'Oferta', href: '/oferta', offerPages: [
             {title: 'kosultacja logopedyczna', href: '/oferta/konsultacja-logopedyczna'},
             {title: 'terapia logopedyczna', href: '/oferta/terapia-logopedyczna'},
