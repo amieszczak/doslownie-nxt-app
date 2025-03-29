@@ -8,12 +8,10 @@ import { Autoplay } from 'swiper/modules';
 import "swiper/css";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import logoOpaque from '../../../../public/main/LOGO_OPAQUE.svg';
-import sliderDivider from '../../../../public/main/slider_divider.svg';
 import logoOpaqueLight from '../../../../public/main/LOGO_OPAQUE_LIGHT.svg';
 import Image from 'next/image';
 
-const tagData = [
+const tagData: Array<{name : string}> = [
     {name: 'opóźniony rozwój mowy'},
     {name: 'dyslalia'},
     {name: 'afazja'},
@@ -61,19 +59,3 @@ export default function HeaderSlider() {
         </>        
     )
 }
-
-  
-
-
-           /*  <Swiper
-            spaceBetween={50}
-            slidesPerView={3}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}                
-            >
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-
-        </Swiper> */

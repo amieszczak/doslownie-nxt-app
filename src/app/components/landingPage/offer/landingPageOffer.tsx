@@ -6,6 +6,8 @@ import styles from './landingPageOffer.module.css';
 import Markup from '../../markup/markup';
 import { useState } from 'react';
 import Image from 'next/image';
+import TitleSlider from '../titleSlider/titleSlider';
+
 
 export default function LandingPageOffer() {
 
@@ -22,63 +24,51 @@ export default function LandingPageOffer() {
     let currentElement = OFFER_CONTENT.find(item => item.id == offerId);
 
     return(
-        <div className="w-screen h-screen relative flex justify-between">            
-            <div className="w-1/2 flex items-center ">
-                <Markup variant={'left'} title={'oferta'}/>
-                <div className="flex flex-col justify-between">
-                    <h2>{currentElement && currentElement.title}</h2>               
-                    <p>{currentElement && currentElement.description}</p>
-                </div>            
-            </div>
-            <div className="w-1/2">
-                <Swiper
-                modules={[Autoplay, Pagination]}
-                loop={true}
-                autoplay={{
-                    delay: 5000,
-                    disableOnInteraction: true,
-                }}
-                pagination={{
-                    clickable: true,
-                    el: `.${styles.paginationContainer}`,      
-                    bulletClass: 'swiper-pagination-bullet',
-                    bulletActiveClass: 'swiper-pagination-bullet-active', 
-                }}
+        <>
+            <TitleSlider slogan='dosłownie cztery główne specjalizacje'/>
+            <div className="w-screen h-[75vh] relative flex justify-between">                  
+                <div className="w-1/2 flex items-center">
+                    <Markup variant={'left'} title={'oferta'}/>
+                    <div className="flex flex-col justify-between px-25 gap-15">
+                        <h2 className="text-4xl font-thin italic">{currentElement && currentElement.title}</h2>               
+                        <p >{currentElement && currentElement.description}</p>
+                    </div>            
+                </div>
+                <div className="w-1/2">
+                    <Swiper
+                    className="h-full"
+                    modules={[Autoplay, Pagination]}
+                    /* centeredSlides = {false} */
+                    loop={true}
+                    autoplay={{
+                        delay: 5000,
+                        disableOnInteraction: true,
+                    }}
+                    /* pagination={{
+                        clickable: true,
+                        el: `.${styles.paginationContainer}`,      
+                        bulletClass: 'swiper-pagination-bullet',
+                        bulletActiveClass: 'swiper-pagination-bullet-active', 
+                    }} */
 
-                onActiveIndexChange={(swiper) => setOfferId(swiper.realIndex + 1)}
-                >
-                    {OFFER_CONTENT.map((item, index) => {
-                    return (
-                    <SwiperSlide key={index}>
-                        <Image                      
-                        src={item.photoSrc}
-                        className={styles.photo}
-                        width={1000}
-                        height={737}
-                        alt={item.title}
-                        />
-                    </SwiperSlide>
-                    );
-                })}
-                </Swiper>
+                    onActiveIndexChange={(swiper) => setOfferId(swiper.realIndex + 1)}
+                    >
+                        {OFFER_CONTENT.map((item, index) => {
+                        return (
+                        <SwiperSlide key={index}>
+                            <Image                      
+                            src={item.photoSrc}
+                            /* className={styles.photo} */
+                            width={1000}
+                            height={737}
+                            alt={item.title}
+                            />
+                        </SwiperSlide>
+                        );
+                    })}
+                    </Swiper>
+                </div>
             </div>
-        </div>
+        </>        
     )
 }
-
-/* {(() => {
-    const item = OFFER_CONTENT.find(item => item.id === offerId);
-    return item ?  
-        <>
-            <h2>{item.title}</h2> 
-            <p>{item.description}</p>
-        </>                                                        
-    : null;
-})} */
-
- {/* {OFFER_CONTENT.map((item, index) => {
-                    return(
-                        <h2 key={index}>{item.title}</h2>
-                        
-                    )
-                })} */}

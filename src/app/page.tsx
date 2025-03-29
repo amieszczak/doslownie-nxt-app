@@ -1,11 +1,12 @@
-import Image from "next/image";
 import LandingPageVideo from "./components/landingPage/video/landingPageVideo";
 import LandingPageOffer from "./components/landingPage/offer/landingPageOffer";
+/* import TitleSlider from "./components/landingPage/titleSlider/titleSlider"; */
 
 export default function Home() {
   return (
     <>
       <LandingPageVideo/>
+      {/* <TitleSlider/> */}
       <LandingPageOffer/>
     </>
   );

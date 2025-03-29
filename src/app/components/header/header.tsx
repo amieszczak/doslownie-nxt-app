@@ -54,8 +54,8 @@ export default function Header() {
     }, [])
 
     return(
-        <header className="fixed">
-            <div className={classNames({['flex items-center gap-5 w-screen px-25 border-b border-black relative z-10 bg-white']: true, [classes.menuBarHeight]:true, [classes.menuBarHeightThin]: menuTransform == true})}>
+        <header className="fixed z-100">
+            <div className={classNames({['flex items-center gap-5 w-screen px-25 border-b border-black relative bg-white']: true, [classes.menuBarHeight]:true, [classes.menuBarHeightThin]: menuTransform == true})}>
                 <Link href='/' className={classNames({["h-13 flex items-center gap-2"]:true, [styles.logoTransform]: menuTransform == true, [styles.headerTransformBack]: menuTransform == false})}>
                     <Image alt="logo" src={logo} className="size-full"/>
                     <div className={classNames({['flex flex-col justify-center leading-none']:true, [styles.titleTransform]: menuTransform == true, [styles.headerTransformBack]: menuTransform == false})}>
