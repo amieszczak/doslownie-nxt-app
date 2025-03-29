@@ -29,7 +29,7 @@ export default function LandingPageOffer() {
             <div className="w-screen h-[75vh] relative flex justify-between">                  
                 <div className="w-1/2 flex items-center">
                     <Markup variant={'left'} title={'oferta'}/>
-                    <div className="flex flex-col justify-between px-25 gap-15">
+                    <div className="flex flex-col px-25 gap-15">
                         <h2 className="text-4xl font-thin italic">{currentElement && currentElement.title}</h2>               
                         <p >{currentElement && currentElement.description}</p>
                     </div>            
@@ -54,18 +54,18 @@ export default function LandingPageOffer() {
                     onActiveIndexChange={(swiper) => setOfferId(swiper.realIndex + 1)}
                     >
                         {OFFER_CONTENT.map((item, index) => {
-                        return (
-                        <SwiperSlide key={index}>
-                            <Image                      
-                            src={item.photoSrc}
-                            /* className={styles.photo} */
-                            width={1000}
-                            height={737}
-                            alt={item.title}
-                            />
-                        </SwiperSlide>
-                        );
-                    })}
+                            return (
+                            <SwiperSlide key={index}>
+                                <Image                      
+                                src={item.photoSrc}
+                                /* className={styles.photo} */
+                                width={1000}
+                                height={737}
+                                alt={item.title}
+                                />
+                            </SwiperSlide>
+                            );
+                        })}
                     </Swiper>
                 </div>
             </div>
