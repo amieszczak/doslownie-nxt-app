@@ -33,3 +33,20 @@
     transform:  translateX(-50%) scaleX(0);
     transition: 0.5s;
 }
+
+.headerLandingPageTop {
+    background: none !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+.headerTitleHide {
+    display: none;
+}
+
+.borderHide {
+    border-bottom: 1px solid #ffffff !important;
+    width: 50vw !important;
+    right: 0 !important; 
+    left: auto !important;
+}

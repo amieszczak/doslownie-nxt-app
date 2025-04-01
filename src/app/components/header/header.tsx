@@ -7,14 +7,17 @@ import classNames from 'classnames';
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import chevronDown from '../../../../public/icons/chevronDown.svg';
+import chevronDownWhite from '../../../../public/icons/chevronDownWhite.svg';
 import HeaderSlider from '../headerSlider/headerSlider';
 import logo from '../../../../public/main/LOGO.svg';
-
+import logoWhite from '../../../../public/main/LOGO_WHITE.svg';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
 
     const [isDropdownOpened, setDropdownOpened] = useState(false);
     const [menuTransform, setMenuTransform] = useState(false);
+    /* const [headerProperties, setHeaderProperties] = useState(null); */
 
     const Links: Array<{title : string, href : string, offerPages? : Array<{title : string, href : string}>}> = [
         { title: 'Oferta', href: '/oferta', offerPages: [
@@ -28,20 +31,9 @@ export default function Header() {
         { title: 'Blog', href: '/blog'},
     ]
 
-    /* useEffect(() => {
-        
-
-    }, []) */
-
     useEffect(() => {
 
         const handleScroll = () => {            
-    
-            /* if(window.scrollY == 0) {
-                setMenuTransform(false);
-            } else {
-                setMenuTransform(true);
-            } */
                 setMenuTransform(window.scrollY != 0);
         }
 
@@ -53,12 +45,16 @@ export default function Header() {
 
     }, [])
 
+    const location = usePathname();
+    const LPHeaderTop  = location == '/' && menuTransform == false;
+    const LPHeaderScrolled = location == '/' && menuTransform == true;
+
     return(
         <header className="fixed z-100">
-            <div className={classNames({['flex items-center gap-5 w-screen px-25 border-b border-black bg-white relative']: true, [classes.menuBarHeight]:true, [classes.menuBarHeightThin]: menuTransform == true})}>
+            <div className={classNames({['flex items-center gap-5 w-screen px-25 border-bottom border-black bg-white relative']: true, [styles.headerLandingPageTop]: LPHeaderTop, [classes.menuBarHeight]:true, [classes.menuBarHeightThin]: menuTransform == true})}>
                 <Link href='/' className={classNames({["h-13 flex items-center gap-2"]:true, [styles.logoTransform]: menuTransform == true, [styles.headerTransformBack]: menuTransform == false})}>
-                    <Image alt="logo" src={logo} className="size-full"/>
-                    <div className={classNames({['flex flex-col justify-center leading-none']:true, [styles.titleTransform]: menuTransform == true, [styles.headerTransformBack]: menuTransform == false})}>
+                    <Image alt="logo" src={LPHeaderTop ? logoWhite : logo} className="size-full"/>
+                    <div className={classNames({['flex flex-col justify-center leading-none']:true, [styles.titleTransform]: menuTransform == true, [styles.headerTransformBack]: menuTransform == false, [styles.headerTitleHide]: LPHeaderTop})}>
                         <p className="text-2xl font-thin">DOSŁOWNIE</p>
                         <p className="text-base font-thin">NEUROLOGOPEDIA</p>
                     </div>                
@@ -77,7 +73,7 @@ export default function Header() {
                                                 <Image
                                                 alt='chevron down'
                                                 className={classNames({[styles.chevronClosed]: true, [styles.chevronOpened]: isDropdownOpened})}
-                                                src={chevronDown}
+                                                src={LPHeaderTop ? chevronDownWhite : chevronDown}
                                                 />
                                             </Link>
                                             <div className={classNames({['w-screen flex justify-between absolute z-10 bottom-0 translate-y-full -translate-x-1/2 px-25 bg-white border-t border-black']:true, [classes.menuBarHeight]:true, [classes.menuBarHeightThin]: menuTransform == true, [styles.dropdownClose]:true, [styles.dropdownOpen]: isDropdownOpened})}>
@@ -94,7 +90,7 @@ export default function Header() {
                         )
                     })}
                 </nav>
-                <div className="absolute bottom-0 left-0 border-b border-black w-screen translate-y-full overflow-hidden">
+                <div className={classNames({["absolute bottom-0 left-0 border-b border-black w-screen translate-y-full overflow-hidden"]: true, [styles.borderHide]:LPHeaderTop})}>
                     <HeaderSlider/>
                 </div>            
             </div>       
