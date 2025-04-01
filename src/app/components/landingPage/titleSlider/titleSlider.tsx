@@ -1,5 +1,6 @@
 'use client';
 import classes from '../../../page.module.css';
+import styles from './titleSlider.module.css';
 import classNames from 'classnames';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
@@ -17,6 +18,7 @@ import Image from 'next/image';
 
 export default function TitleSlider({slogan}: {slogan : string}) {
 
+    //swiper element requires having more than one element to work properly
     const sliderData: Array<{name: string}> = [
         {name: slogan},
         {name: slogan},
@@ -40,7 +42,8 @@ export default function TitleSlider({slogan}: {slogan : string}) {
                     >
                     {sliderData.map(item => {
                         return(
-                            <SwiperSlide>
+                            <SwiperSlide
+                            className={styles.slide}>
                                 <div className="flex items-center gap-10">
                                     <p className="text-8xl font-thin whitespace-nowrap uppercase hover:text-gray-800">{item.name}</p>
                                     <Image className='h-12' alt="logo" src={logoOpaqueLight}/>

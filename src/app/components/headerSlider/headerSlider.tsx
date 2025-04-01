@@ -45,7 +45,9 @@ export default function HeaderSlider() {
                     >
                     {tagData.map(item => {
                         return(
-                            <SwiperSlide>
+                            <SwiperSlide
+                            className={styles.slide}
+                            >
                                 <div className="flex items-center gap-10">
                                     <Link href='#' className="text-8xl font-bold whitespace-nowrap uppercase hover:text-gray-800">{item.name}</Link>
                                     <Image className='h-12' alt="logo" src={logoOpaqueLight}/>

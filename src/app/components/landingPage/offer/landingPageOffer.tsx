@@ -37,8 +37,8 @@ export default function LandingPageOffer() {
                 <div className="w-1/2">
                     <Swiper
                     className="h-full"
-                    modules={[Autoplay, Pagination]}
-                    /* centeredSlides = {false} */
+                    modules={[Autoplay, Pagination]}                    
+                    slidesPerView={1}
                     loop={true}
                     autoplay={{
                         delay: 5000,
@@ -58,7 +58,7 @@ export default function LandingPageOffer() {
                             <SwiperSlide key={index}>
                                 <Image                      
                                 src={item.photoSrc}
-                                /* className={styles.photo} */
+                                className={styles.photo}
                                 width={1000}
                                 height={737}
                                 alt={item.title}

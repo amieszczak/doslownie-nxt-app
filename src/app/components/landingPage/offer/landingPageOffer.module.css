@@ -1,0 +1,6 @@
+.photo {
+    width: 100%;
+    /* height: calc(min(38.4vw, 737px)); */
+    height: 100%;
+    object-fit: cover;
+}
