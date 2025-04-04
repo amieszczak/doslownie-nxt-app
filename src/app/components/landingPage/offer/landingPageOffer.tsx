@@ -24,7 +24,7 @@ export default function LandingPageOffer() {
     let currentElement = OFFER_CONTENT.find(item => item.id == offerId);
 
     return(
-        <>
+        <div id="offer" className="bg-white">
             <TitleSlider slogan='dosłownie cztery główne specjalizacje'/>
             <div className="w-screen h-[75vh] relative flex justify-between">                  
                 <div className="w-1/2 flex items-center">
@@ -69,6 +69,6 @@ export default function LandingPageOffer() {
                     </Swiper>
                 </div>
             </div>
-        </>        
+        </div>        
     )
 }

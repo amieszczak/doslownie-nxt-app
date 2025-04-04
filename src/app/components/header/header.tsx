@@ -34,7 +34,8 @@ export default function Header() {
     useEffect(() => {
 
         const handleScroll = () => {            
-                setMenuTransform(window.scrollY != 0);
+                const offerPosition = document?.getElementById('offer')?.getBoundingClientRect().y;                
+                setMenuTransform(undefined != offerPosition && offerPosition < 55);                
         }
 
         window.addEventListener('scroll', handleScroll);
@@ -51,10 +52,10 @@ export default function Header() {
 
     return(
         <header className="fixed z-100">
-            <div className={classNames({['flex items-center gap-5 w-screen px-25 border-bottom border-black bg-white relative']: true, [styles.headerLandingPageTop]: LPHeaderTop, [classes.menuBarHeight]:true, [classes.menuBarHeightThin]: menuTransform == true})}>
-                <Link href='/' className={classNames({["h-13 flex items-center gap-2"]:true, [styles.logoTransform]: menuTransform == true, [styles.headerTransformBack]: menuTransform == false})}>
+            <div className={classNames({['flex items-center gap-5 w-screen px-25 border-bottom border-black bg-white relative']: true, [styles.headerLandingPageTop]: LPHeaderTop, [classes.menuBarHeight]:true, [classes.menuBarHeightThin]: menuTransform})}>
+                <Link href='/' className={classNames({["h-13 flex items-center gap-2"]:true, [styles.logoTransform]: menuTransform, [styles.headerTransformBack]: !menuTransform})}>
                     <Image alt="logo" src={LPHeaderTop ? logoWhite : logo} className="size-full"/>
-                    <div className={classNames({['flex flex-col justify-center leading-none']:true, [styles.titleTransform]: menuTransform == true, [styles.headerTransformBack]: menuTransform == false, [styles.headerTitleHide]: LPHeaderTop})}>
+                    <div className={classNames({['flex flex-col justify-center leading-none']:true, [styles.titleTransform]: menuTransform, [styles.headerTransformBack]: !menuTransform, [styles.headerTitleHide]: LPHeaderTop})}>
                         <p className="text-2xl font-thin">DOSŁOWNIE</p>
                         <p className="text-base font-thin">NEUROLOGOPEDIA</p>
                     </div>                
@@ -76,7 +77,7 @@ export default function Header() {
                                                 src={LPHeaderTop ? chevronDownWhite : chevronDown}
                                                 />
                                             </Link>
-                                            <div className={classNames({['w-screen flex justify-between absolute z-10 bottom-0 translate-y-full -translate-x-1/2 px-25 bg-white border-t border-black']:true, [classes.menuBarHeight]:true, [classes.menuBarHeightThin]: menuTransform == true, [styles.dropdownClose]:true, [styles.dropdownOpen]: isDropdownOpened})}>
+                                            <div className={classNames({['w-screen flex justify-between absolute z-10 bottom-0 translate-y-full -translate-x-1/2 px-25 bg-white border-t border-black']:true, [classes.menuBarHeight]:true, [classes.menuBarHeightThin]: menuTransform, [styles.dropdownClose]:true, [styles.dropdownOpen]: isDropdownOpened, [styles.dropdownMainTop]: LPHeaderTop})}>
                                                 {item.offerPages.map((element, index) => {
                                                     return(
                                                         <Link className='whitespace-nowrap h-full flex items-center' key={index} href={element.href}>{element.title}</Link>

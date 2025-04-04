@@ -21,7 +21,7 @@ export default function LandingPageSpecialistsComponent() {
     let currentElement = SPECIALISTS_DATA.find(item => item.id == specialistId);
 
     return(
-        <>
+        <div className="bg-white">
             <TitleSlider slogan='Mamy bogate doświadczenie i kompetencje. Poznaj nasz zespół'/>
             <div className="w-screen h-[75vh] relative flex justify-between">                  
                 <Markup variant={'left'} title={'o nas'}/>                
@@ -65,6 +65,6 @@ export default function LandingPageSpecialistsComponent() {
                     </Swiper>                     
                 </div>
             </div>
-        </>
+        </div>
     )
 }
