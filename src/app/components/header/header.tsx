@@ -48,7 +48,6 @@ export default function Header() {
 
     const location = usePathname();
     const LPHeaderTop  = location == '/' && !menuTransform;
-    /* const LPHeaderScrolled = location == '/' && menuTransform; */ //sprawdzić booleany 
 
     return(
         <header className="fixed z-100">
