@@ -6,7 +6,7 @@ import aboutImage from '../../../../../public/landingPage/about.png';
 export default function LandingPageTeamComponent() {
     return(
         <div className="bg-white">
-            <TitleSlider slogan='Jesteśmy grupą specjalistek z misją'/>
+            {/* <TitleSlider slogan='Jesteśmy grupą specjalistek z misją'/> */}
             <div className="w-screen h-[75vh] relative flex justify-between">                  
                 <Markup variant={'right'} title={'o nas'}/>
                 <div className="w-1/2 flex items-center">     

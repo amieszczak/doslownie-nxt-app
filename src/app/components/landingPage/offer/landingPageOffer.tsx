@@ -7,6 +7,7 @@ import Markup from '../../markup/markup';
 import { useState } from 'react';
 import Image from 'next/image';
 import TitleSlider from '../titleSlider/titleSlider';
+import LandingPageUnitTitle from '../unitTitle/landingPageUnitTitle';
 
 
 export default function LandingPageOffer() {
@@ -25,7 +26,6 @@ export default function LandingPageOffer() {
 
     return(
         <div id="offer" className="bg-white">
-            <TitleSlider slogan='dosłownie cztery główne specjalizacje'/>
             <div className="w-screen h-[75vh] relative flex justify-between">                  
                 <div className="w-1/2 flex items-center">
                     <Markup variant={'left'} title={'oferta'}/>
@@ -35,6 +35,7 @@ export default function LandingPageOffer() {
                     </div>            
                 </div>
                 <div className="w-1/2">
+                    <LandingPageUnitTitle title={'Oferta dosłownie'} variant={''}/>
                     <Swiper
                     className="h-full"
                     modules={[Autoplay, Pagination]}                    
@@ -52,7 +53,7 @@ export default function LandingPageOffer() {
                     }} */
 
                     onActiveIndexChange={(swiper) => setOfferId(swiper.realIndex + 1)}
-                    >
+                    >                        
                         {OFFER_CONTENT.map((item, index) => {
                             return (
                             <SwiperSlide key={index}>

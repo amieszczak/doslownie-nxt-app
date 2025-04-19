@@ -22,7 +22,7 @@ export default function LandingPageSpecialistsComponent() {
 
     return(
         <div className="bg-white">
-            <TitleSlider slogan='Mamy bogate doświadczenie i kompetencje. Poznaj nasz zespół'/>
+            {/* <TitleSlider slogan='Mamy bogate doświadczenie i kompetencje. Poznaj nasz zespół'/> */}
             <div className="w-screen h-[75vh] relative flex justify-between">                  
                 <Markup variant={'left'} title={'o nas'}/>                
                 <div className="w-1/2 flex  flex-col justify-center px-25 gap-15">
