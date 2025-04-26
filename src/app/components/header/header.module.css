@@ -64,12 +64,12 @@
 }
 
 .blurredDropdownBackground {
-    background-color: rgba(169, 169, 169, 0.1);
     backdrop-filter: blur(10px);  
     position: absolute;
     z-index: -9;
     top: var(--menu-primary-height);
     left: 0;
+    background-color: rgba(169, 169, 169, 0.1);
 }
 
 .blurredDropdownBackgroundScrolled {

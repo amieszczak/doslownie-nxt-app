@@ -14,8 +14,7 @@ export default function LandingPageUnitTitle({title, variant}: {title: string, v
     }
     
     return(
-<h2 className={classNames(variantClass, 'text-5xl')}>{title}</h2>
-        
+        <h2 className={classNames(variantClass, 'text-5xl uppercase')}>{title}</h2>        
     )
 }
 
