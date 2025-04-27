@@ -48,13 +48,24 @@ export default function Header() {
 
     const location = usePathname();
     const LPHeaderTop  = location == '/' && !menuTransform;
+    
 
     return(
         <header className="fixed z-100">
-            <div className={classNames({['flex items-center gap-5 w-screen px-25 border-bottom border-black bg-white relative']: true, [styles.headerLandingPageTop]: LPHeaderTop, ['hover:bg-gray-400 hover:backdrop-filter hover:backdrop-blur-sm hover:bg-opacity-10']: LPHeaderTop, [classes.menuBarHeight]:true, [classes.menuBarHeightThin]: menuTransform})}>
-                <Link href='/' className={classNames({["h-13 flex items-center gap-2"]:true, [styles.logoTransform]: menuTransform, [styles.headerTransformBack]: !menuTransform})}>
+            <div className={classNames({['flex items-center gap-5 w-screen px-25 border-bottom border-black bg-white relative']: true, 
+                                        ['border']: !LPHeaderTop,
+                                        [styles.headerLandingPageTop]: LPHeaderTop, 
+                                        ['hover:bg-gray-400 hover:backdrop-filter hover:backdrop-blur-sm hover:bg-opacity-10']: LPHeaderTop, 
+                                        [classes.menuBarHeight]:true, 
+                                        [classes.menuBarHeightThin]: menuTransform})}>
+                <Link href='/' className={classNames({["h-13 flex items-center gap-2"]:true, 
+                                                        [styles.logoTransform]: menuTransform, 
+                                                        [styles.headerTransformBack]: !menuTransform})}>
                     <Image alt="logo" src={LPHeaderTop ? logoWhite : logo} className="size-full"/>
-                    <div className={classNames({['flex flex-col justify-center leading-none']:true, [styles.titleTransform]: menuTransform, [styles.headerTransformBack]: !menuTransform, [styles.headerTitleHide]: LPHeaderTop})}>
+                    <div className={classNames({['flex flex-col justify-center leading-none']:true, 
+                                                [styles.titleTransform]: menuTransform, 
+                                                [styles.headerTransformBack]: !menuTransform, 
+                                                [styles.headerTitleHide]: LPHeaderTop})}>
                         <p className="text-2xl font-thin">DOSŁOWNIE</p>
                         <p className="text-base font-thin">NEUROLOGOPEDIA</p>
                     </div>                
@@ -68,7 +79,8 @@ export default function Header() {
                                         className='h-full'
                                         onMouseEnter={() => setDropdownOpened(true)}
                                         onMouseLeave={() => setDropdownOpened(false)}>
-                                            <Link className={classNames({[styles.back]:true, ['block h-full flex items-center text-base']:true})} href={item.href}>
+                                            <Link className={classNames({[styles.back]:true, 
+                                                                        ['block h-full flex items-center text-base']:true})} href={item.href}>
                                                 <p>{item.title}</p>
                                                 <Image
                                                 alt='chevron down'
