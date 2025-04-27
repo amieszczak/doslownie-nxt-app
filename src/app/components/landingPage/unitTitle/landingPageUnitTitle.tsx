@@ -6,16 +6,16 @@ export default function LandingPageUnitTitle({title, variant}: {title: string, v
 
     switch(variant) {
         case 'right':
-            variantClass='text-right';
+            variantClass='justify-end';
         break;
         default:        
-            variantClass='text-left';    
+            variantClass='justify-start';    
         break;
     }
     
     return(
-        <h2 className={classNames(variantClass, 'text-5xl uppercase')}>{title}</h2>        
+        <div className={classNames({["h-[5vw] flex items-center"]:true, [variantClass]:true})}>
+            <h2 className='text-5xl uppercase'>{title}</h2>        
+        </div>        
     )
 }
-
-{/* <h2 className={classNames({[variantClass]:true, ['text-5xl']:true})}>{title}</h2> */}

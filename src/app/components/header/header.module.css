@@ -1,9 +1,9 @@
-.dropdownClose {
+.dropdownClose {    
     transform: translateY(-100%) scaleY(0);
     transition: 0.5s;
 }
 
-.dropdownOpen {
+.dropdownOpen {    
     transform: scaleY(1);
     transition: 0.5s;
     border-bottom: 1px solid var(--color-primary);

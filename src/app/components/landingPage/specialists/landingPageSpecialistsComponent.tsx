@@ -6,6 +6,8 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import Image from "next/image";
 import { useState } from "react";
+import LandingPageUnitTitle from "../unitTitle/landingPageUnitTitle";
+import LandingPageButton from "../../landingPageButton/landingPageButton";
 
 export default function LandingPageSpecialistsComponent() {
 
@@ -23,13 +25,15 @@ export default function LandingPageSpecialistsComponent() {
     return(
         <div className="bg-white">
             {/* <TitleSlider slogan='Mamy bogate doświadczenie i kompetencje. Poznaj nasz zespół'/> */}
-            <div className="w-screen h-[75vh] relative flex justify-between">                  
-                <Markup variant={'left'} title={'o nas'}/>                
+            <div className="w-screen h-[75vh] relative flex justify-between">                                  
+                <Markup variant={'left'} title={'o nas'} top={true}/>                
                 <div className="w-1/2 flex  flex-col justify-center px-25 gap-15">
                     <h2 className="text-4xl font-thin italic">{currentElement && currentElement.name}</h2>
                     <p>{currentElement && currentElement.description}</p>
+                    <LandingPageButton href={'o-nas'} title={'dowiedz się więcej'} variant={'right'}/>
                 </div>
-                <div className="w-1/2 flex items-center">     
+                <div className="w-1/2 overflow-hidden">     
+                <LandingPageUnitTitle title="nasze terapeutki mowy" variant=""/>
                 <Swiper
                     className="h-full"
                     modules={[Autoplay, Pagination]}

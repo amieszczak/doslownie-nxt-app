@@ -6,9 +6,8 @@ import styles from './landingPageOffer.module.css';
 import Markup from '../../markup/markup';
 import { useState } from 'react';
 import Image from 'next/image';
-import TitleSlider from '../titleSlider/titleSlider';
 import LandingPageUnitTitle from '../unitTitle/landingPageUnitTitle';
-
+import LandingPageButton from '../../landingPageButton/landingPageButton';
 
 export default function LandingPageOffer() {
 
@@ -28,13 +27,14 @@ export default function LandingPageOffer() {
         <div id="offer" className="bg-white">
             <div className="w-screen h-[75vh] relative flex justify-between">                  
                 <div className="w-1/2 flex items-center">
-                    <Markup variant={'left'} title={'oferta'}/>
+                    <Markup variant={'left'} title={'oferta'} top={true}/>
                     <div className="flex flex-col px-25 gap-15">
                         <h2 className="text-4xl font-thin italic">{currentElement && currentElement.title}</h2>               
                         <p >{currentElement && currentElement.description}</p>
+                        <LandingPageButton href={'/oferta'} title={"dowiedz się więcej"} variant={'right'}/>
                     </div>            
                 </div>
-                <div className="w-1/2">
+                <div className="w-1/2 overflow-hidden">
                     <LandingPageUnitTitle title={'Oferta dosłownie'} variant={''}/>
                     <Swiper
                     className="h-full"
