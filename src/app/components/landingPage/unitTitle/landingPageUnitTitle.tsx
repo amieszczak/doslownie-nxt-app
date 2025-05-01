@@ -1,21 +1,10 @@
-import classNames from "classnames";
 
-export default function LandingPageUnitTitle({title, variant}: {title: string, variant: string}) {
+export default function LandingPageUnitTitle({title, additionalCssClass = 'justify-start'}: {title: string, additionalCssClass?: string}) {
     
-    let variantClass;
 
-    switch(variant) {
-        case 'right':
-            variantClass='justify-end';
-        break;
-        default:        
-            variantClass='justify-start';    
-        break;
-    }
-    
     return(
-        <div className={classNames({["h-[5vw] flex items-center"]:true, [variantClass]:true})}>
+        <div className={`h-[5vw] flex items-center ${additionalCssClass}`}>  
             <h2 className='text-5xl uppercase'>{title}</h2>        
-        </div>        
+        </div>  
     )
 }

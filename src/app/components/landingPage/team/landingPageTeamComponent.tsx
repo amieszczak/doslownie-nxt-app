@@ -10,7 +10,7 @@ export default function LandingPageTeamComponent() {
             <div className="w-screen h-[75vh] relative flex justify-between">                                  
                 <Markup variant={'right'} title={'zespół'} top={true}/>
                 <div className="w-1/2 overflow-hidden">     
-                    <LandingPageUnitTitle title='poznaj nasz zespół' variant='right'/>
+                    <LandingPageUnitTitle title='poznaj nasz zespół' additionalCssClass="justify-end"/>
                     <Image alt="zespół dosłownie" src={aboutImage} className='w-full h-full object-cover'/>                          
                 </div>
                 <div className="w-1/2 flex flex-col items-center justify-center gap-15 px-25">

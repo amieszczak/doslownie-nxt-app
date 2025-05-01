@@ -54,8 +54,7 @@ export default function Header() {
         <header className="fixed z-100">
             <div className={classNames({['flex items-center gap-5 w-screen px-25 border-bottom border-black bg-white relative']: true, 
                                         ['border']: !LPHeaderTop,
-                                        [styles.headerLandingPageTop]: LPHeaderTop, 
-                                        ['hover:bg-gray-400 hover:backdrop-filter hover:backdrop-blur-sm hover:bg-opacity-10']: LPHeaderTop, 
+                                        [ `${styles.headerLandingPageTop} hover:bg-gray-400 hover:backdrop-filter hover:backdrop-blur-sm hover:bg-opacity-10`]: LPHeaderTop, 
                                         [classes.menuBarHeight]:true, 
                                         [classes.menuBarHeightThin]: menuTransform})}>
                 <Link href='/' className={classNames({["h-13 flex items-center gap-2"]:true, 

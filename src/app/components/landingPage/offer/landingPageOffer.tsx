@@ -35,7 +35,7 @@ export default function LandingPageOffer() {
                     </div>            
                 </div>
                 <div className="w-1/2 overflow-hidden">
-                    <LandingPageUnitTitle title={'Oferta dosłownie'} variant={''}/>
+                    <LandingPageUnitTitle title={'Oferta dosłownie'} />
                     <Swiper
                     className="h-full"
                     modules={[Autoplay, Pagination]}                    
