@@ -10,9 +10,13 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
+    "loader": "^2.1.1",
     "next": "15.2.0",
+    "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "sass": "^1.87.0",
+    "sass-loader": "^16.0.5",
     "swiper": "^11.2.5"
   },
   "devDependencies": {

@@ -1,0 +1,8 @@
+.unitAppearance {
+    @apply border border-black bg-gray-400 backdrop-filter backdrop-blur-sm bg-opacity-10;    
+
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
