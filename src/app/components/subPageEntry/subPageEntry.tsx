@@ -3,7 +3,6 @@ import styles from './subpageEntry.module.css';
 import classNames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
-import samplePhoto from '../../../../public/subPagesThemes/Konsultacja_theme.png'
 import location from '../../../../public/contact/location.svg';
 import message from '../../../../public/contact/message.svg';
 import phone from '../../../../public/contact/phone.svg';
@@ -35,7 +34,6 @@ export default function SubPageEntry() {
                 </Link>                
             </div>
             <div className={classNames({['w-1/2 h-full overflow-hidden']:true})}>
-                {/* <Image src={samplePhoto} alt='zdjęcie motywu' className='w-full h-full object-cover'/> */}
                 <LocationMap />
             </div>
         </div>
