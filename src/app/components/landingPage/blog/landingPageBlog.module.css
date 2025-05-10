@@ -1,4 +1,4 @@
-.unitAppearance {
+/* .unitAppearance {
     @apply border border-black bg-gray-400 backdrop-filter backdrop-blur-sm bg-opacity-10;    
 
     width: 100px;
@@ -6,3 +6,8 @@
     background-color: red;
 }
 
+ */
+
+.container {
+    height: calc(100vh - var(--menu-primary-height));
+}
