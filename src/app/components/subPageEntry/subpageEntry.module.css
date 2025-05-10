@@ -1,3 +1,7 @@
 .icon svg {
     fill: black;
 }
+
+.contentBottomMargin {
+    margin-bottom: var(--menu-primary-height); 
+}
