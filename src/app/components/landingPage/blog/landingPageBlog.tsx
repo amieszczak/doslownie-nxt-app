@@ -11,7 +11,7 @@ export default async function LandingPageBlog() {
     console.log('allPosts:', posts);
     console.log('sampleUrl:', samplePostDataSource);
 
-    const unitAppearance:string = 'w-1/3 h-[80%] border border-black bg-gray-400 backdrop-filter backdrop-blur-sm bg-opacity-10';
+    const unitAppearance:string = 'w-1/3 h-[80%] border border-black backdrop-filter backdrop-blur-sm bg-opacity-10';
 
     return (       
         <div className='w-screen h-screen flex items-center justify-evenly relative z-[10]'>
