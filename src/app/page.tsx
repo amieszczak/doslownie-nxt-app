@@ -17,7 +17,7 @@ export default async function Home() {
       <LandingPageOffer/>
       <LandingPageTeamComponent/>
       <LandingPageSpecialistsComponent/>
-      <LandingPageBlog/>
+      {/* <LandingPageBlog/> */}
     </>
   );
 }
