@@ -25,9 +25,3 @@ export default async function LandingPageBlog() {
         </div>
     )
 }        
-
-{/* <div className={unitAppearance}>
-                <div className='h-1/2 w-full overflow-hidden'>
-                    <Image src={samplePostDataSource} alt='przykładowe zdjęcie bloga' width={500} height={500} className='w-full h-full object-cover'/>
-                </div>
-            </div> */}
