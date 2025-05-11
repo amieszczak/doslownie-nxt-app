@@ -17,6 +17,7 @@ export default function Header() {
 
     const [isDropdownOpened, setDropdownOpened] = useState(false);
     const [menuTransform, setMenuTransform] = useState(false);
+    const [halfWayPassed, setHalfWayPassed] = useState(false);
     /* const [headerProperties, setHeaderProperties] = useState(null); */
 
     const Links: Array<{title : string, href : string, offerPages? : Array<{title : string, href : string}>}> = [
@@ -34,8 +35,24 @@ export default function Header() {
     useEffect(() => {
 
         const handleScroll = () => {            
-                const offerPosition = document?.getElementById('offer')?.getBoundingClientRect().y;                
-                setMenuTransform(undefined != offerPosition && offerPosition < 55);                
+                const offerPosition = document?.getElementById('offer')?.getBoundingClientRect().y;  
+                /* setMenuTransform(undefined != offerPosition && offerPosition < 55);   */ 
+                /////////
+                const footerPosition = document?.getElementById('footer')?.getBoundingClientRect().bottom;    
+                
+                if(window.scrollY < document.body.offsetHeight/2) {
+                    setMenuTransform(undefined != offerPosition && offerPosition < 55);
+                    return
+                }
+                /* ---------------------- */
+                console.log('bodyOffsetHeight:', (window.innerHeight + window.scrollY)  >= (document.body.offsetHeight - 10));
+                console.log('innerElements:', (window.innerHeight + window.scrollY));
+                console.log('offsetElement:', document.body.offsetHeight);
+                console.log('tracking footer position:', footerPosition);
+                console.log('windowScrollY:', window.scrollY < document.body.offsetHeight/2 );
+                /* ---------------------- */
+                setMenuTransform((window.innerHeight + window.scrollY)  <= (document.body.offsetHeight - 10));
+                /* setMenuTransform(undefined != offerPosition && offerPosition < 55 || (window.innerHeight + window.scrollY)  <= (document.body.offsetHeight - 10));   */
         }
 
         window.addEventListener('scroll', handleScroll);
@@ -48,7 +65,7 @@ export default function Header() {
 
     const location = usePathname();
     const LPHeaderTop  = location == '/' && !menuTransform;
-    
+    /* const LPHeaderBottom = location == '/' &&  */
 
     return(
         <header className="fixed z-100">
