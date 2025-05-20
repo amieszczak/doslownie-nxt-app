@@ -9,7 +9,7 @@ export default async function Home() {
 
   const posts = await getAllPosts();
 
-  /* console.log('allPosts:', posts); */
+  console.log('allPosts:', posts);
 
   return (
     <>

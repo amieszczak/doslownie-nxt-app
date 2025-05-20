@@ -16,3 +16,7 @@
 .subpageUnitHeight {
     height: calc(100vh - var(--menu-primary-height)*2);  
 }
+
+.landingPageBlogContainer {
+    max-height: calc(100% - 6.25rem);    
+}
