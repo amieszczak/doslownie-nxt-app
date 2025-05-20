@@ -7,9 +7,9 @@ import getAllPosts from "@/integrations/wordpress/getAllPosts";
 
 export default async function Home() {
 
-/*   const posts = await getAllPosts();
+  const posts = await getAllPosts();
 
-  console.log('allPosts:', posts); */
+  /* console.log('allPosts:', posts); */
 
   return (
     <>
@@ -17,7 +17,7 @@ export default async function Home() {
       <LandingPageOffer/>
       <LandingPageTeamComponent/>
       <LandingPageSpecialistsComponent/>
-      <LandingPageBlog/>
+      <LandingPageBlog />
     </>
   );
 }

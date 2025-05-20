@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function LandingPageBlogUnit({photoSrc, title, content, variant}: {photoSrc: string, title?: string, content?: string, variant?: boolean}) {
     return(
-        <div className={classNames({['w-1/3 border border-white backdrop-filter backdrop-blur-sm bg-opacity-10 relative']: true, ['h-[80%]']:variant, ['h-[60%]']: !variant})}>
+        <div className={classNames({['border border-white backdrop-filter backdrop-blur-sm bg-opacity-10 relative']: true, ['h-[80%] aspect-square']:variant, ['h-[60%]']: !variant})}>
             {!variant
             &&
             <h2 className='absolute text-white text-7xl text-bold font-bold translate-y-[-110%]'>BLOG</h2>}
@@ -16,8 +16,8 @@ export default function LandingPageBlogUnit({photoSrc, title, content, variant}:
             :
             null
             }
-            <div className='w-full h-1/2 p-5 overflow-hidden'>
-                <h3 className='text-white text-xl'>{title}</h3>
+            <div className={classNames({['w-full p-5 overflow-hidden']: true, ['h-1/2']: undefined != photoSrc })}> 
+                <h3 className='text-white text-xl mb-5'>{title}</h3>
                 <div className='text-white'
                 dangerouslySetInnerHTML={{__html: content ?? ''}}
                 />

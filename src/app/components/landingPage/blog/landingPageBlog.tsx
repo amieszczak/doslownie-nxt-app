@@ -1,27 +1,24 @@
+
 import getAllPosts from "@/integrations/wordpress/getAllPosts"
 import styles from './landingPageBlog.module.css';
-/* import Image from "next/image"; */
 import classNames from "classnames";
 import LandingPageBlogUnit from "./unit/lpBlogUnit";
+import useLandingPageBlog from "./utils/useLandingPageBlog";
 
 export default async function LandingPageBlog() {
 
-    const posts = await getAllPosts();
+    const posts = await getAllPosts();    
 
-    const samplePostDataSource = posts[2]?.node?.featuredImage?.node?.sourceUrl;
-
-    
-
-    console.log('allPosts:', posts);
-    console.log('sampleUrl:', samplePostDataSource);
-    console.log('currentFeatureImage:', posts[0]?.node?.featuredImage?.node?.sourceUrl);
+    const sample = useLandingPageBlog();
 
     const unitAppearance:string = 'w-1/3 h-[80%] border border-black backdrop-filter backdrop-blur-sm bg-opacity-10';
 
+    console.log('useLandingPageBlog:', useLandingPageBlog);
+
     return (       
-        <div className={classNames({['w-screen flex items-center justify-evenly']:true, [styles.container]:true})}>
-                <LandingPageBlogUnit photoSrc={posts[2]?.node?.featuredImage?.node?.sourceUrl} title={posts[2]?.node?.title} content={posts[2]?.node?.content} variant={true}/>
-                <LandingPageBlogUnit photoSrc={posts[3]?.node?.featuredImage?.node?.sourceUrl} title={posts[3]?.node?.title} content={posts[3]?.node?.content}/>
+        <div className={classNames({['w-screen flex items-center justify-between px-25 gap-25']:true, [styles.container]:true})}>
+                <LandingPageBlogUnit photoSrc={posts[0]?.node?.featuredImage?.node?.sourceUrl} title={posts[0]?.node?.title} content={posts[0]?.node?.content} variant={true}/>
+                <LandingPageBlogUnit photoSrc={posts[1]?.node?.featuredImage?.node?.sourceUrl} title={posts[1]?.node?.title} content={posts[1]?.node?.content}/>
         </div>
     )
 }        
