@@ -1,8 +1,27 @@
 import React from "react";
+import classes from '../../page.module.css';
+import getAllPosts from "@/integrations/wordpress/getAllPosts";
+import PostPreview from "@/app/components/blog/postPreview/postPreview";
 
-export default function BlogPage() {
+export default async function BlogPage() {
+
+    const posts = await getAllPosts();
+    
+    console.log(posts);
 
     return(
-        <>Blog</>
+        <>
+            <div className={classes.subpageTopMargin}></div>   
+            <div className='flex'>
+                <div className='w-200'></div>
+                <div className='flex flex-col gap-25 w-full mr-25'>
+                    {posts?.map(item => {
+                        return(
+                            <PostPreview/>
+                        )
+                    })}
+                </div>
+            </div>
+        </>
     )
 }
