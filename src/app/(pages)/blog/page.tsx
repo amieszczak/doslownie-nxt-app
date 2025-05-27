@@ -7,7 +7,9 @@ export default async function BlogPage() {
 
     const posts = await getAllPosts();
     
-    console.log(posts);
+    /* console.log(posts); */
+
+    console.log('retrievedPosts:', posts);
 
     return(
         <>
@@ -15,9 +17,9 @@ export default async function BlogPage() {
             <div className='flex'>
                 <div className='w-200'></div>
                 <div className='flex flex-col gap-25 w-full mr-25'>
-                    {posts?.map(item => {
+                    {posts?.map((item, index) => {
                         return(
-                            <PostPreview/>
+                            <PostPreview key={index} title={item.title}/>
                         )
                     })}
                 </div>
