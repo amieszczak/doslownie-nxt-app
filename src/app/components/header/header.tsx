@@ -17,8 +17,6 @@ export default function Header() {
 
     const [isDropdownOpened, setDropdownOpened] = useState(false);
     const [menuTransform, setMenuTransform] = useState(false);
-    const [halfWayPassed, setHalfWayPassed] = useState(false);
-    /* const [headerProperties, setHeaderProperties] = useState(null); */
 
     const Links: Array<{title : string, href : string, offerPages? : Array<{title : string, href : string}>}> = [
         { title: 'Oferta', href: '/oferta', offerPages: [
@@ -32,28 +30,34 @@ export default function Header() {
         { title: 'Blog', href: '/blog'},
     ]
 
-    useEffect(() => {
-
-        const handleScroll = () => {            
-                const offerPosition = document?.getElementById('offer')?.getBoundingClientRect().y;  
-                
-                if(window.scrollY < document.body.offsetHeight/2) {
-                    setMenuTransform(undefined != offerPosition && offerPosition < 55);
-                    return
-                }                
-                setMenuTransform((window.innerHeight + window.scrollY)  <= (document.body.offsetHeight - 10));
-        }
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        }
-
-    }, [])
-
     const location = usePathname();
     const LPHeaderTop  = location == '/' && !menuTransform;
+
+    useEffect(() => {        
+        const handleScroll = () => {            
+                if(location == '/') {
+                    console.log('landingPageMenuTransform');
+                    const offerPosition = document?.getElementById('offer')?.getBoundingClientRect().y;  
+                    
+                    if(window.scrollY < document.body.offsetHeight/2) {
+                        setMenuTransform(undefined != offerPosition && offerPosition < 55);
+                        return
+                    }                
+                    setMenuTransform((window.innerHeight + window.scrollY)  <= (document.body.offsetHeight - 10));
+                }
+
+                if(location != '/') {
+                    console.log('subPageMenuTransform');
+                    setMenuTransform(window.scrollY != 0);
+                }
+            }
+    
+            window.addEventListener('scroll', handleScroll);
+    
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            }
+    }, [location])
 
     return(
         <header className="fixed z-100">
@@ -112,9 +116,7 @@ export default function Header() {
                         )
                     })}
                 </nav>
-                {/* <span className={classNames({['bg-gray-400 rounded-md backdrop-filter backdrop-blur-sm bg-opacity-10']: true, [styles.dropdownMainTest]: true })}></span> */}
-                {/* <span className={classNames({['bg-gray-400 rounded-md backdrop-filter backdrop-blur-sm opacity-10 absolute w-screen h-screen top-100']: LPHeaderTop, [styles.dropdownMainTest]: true })}></span> */}
-                <div className={classNames({["absolute bottom-0 left-0 border-b border-black w-screen translate-y-full overflow-hidden"]: true, [styles.borderHide]:LPHeaderTop})}>
+                <div className={classNames({["absolute bottom-0 left-0 border-b border-black w-screen translate-y-full overflow-hidden transition duration-500"]: true, [styles.borderHide]:LPHeaderTop, [styles.headerSliderScrollHide]:menuTransform})}>
                     <HeaderSlider/>
                 </div>            
             </div>      
