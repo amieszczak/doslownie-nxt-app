@@ -13,8 +13,8 @@ export default async function LandingPageBlog() {
 
     return (       
         <div className={classNames({['w-screen flex items-center justify-between pt-50 pb-25 px-25 gap-25']:true, [styles.container]:true})}>
-                <LandingPageBlogTitleUnit photoSrc={posts[0]?.node?.featuredImage?.node?.sourceUrl} title={posts[0]?.node?.title} content={posts[0]?.node?.content}/>
-                <LandingPageBlogCommonUnit photoSrc={posts[1]?.node?.featuredImage?.node?.sourceUrl} title={posts[1]?.node?.title} content={posts[1]?.node?.content}/>
+            <LandingPageBlogTitleUnit photoSrc={posts[0]?.featuredImage?.node?.sourceUrl} title={posts[0]?.title} content={posts[0]?.content}/>        
+            <LandingPageBlogCommonUnit photoSrc={posts[1]?.featuredImage?.node?.sourceUrl} title={posts[1]?.title} content={posts[1]?.content}/>
         </div>
     )
 }        

@@ -6,11 +6,11 @@ export default function PostPreview({title, content, photo}: {title: string, con
             {photo 
             && 
             <div className='w-1/2 h-full'>
-                <Image src={photo} alt='' width={100} height={100} className='w-full h-full object-cover'/>
+                <Image src={photo} alt='' width={1000} height={1000} className='w-full h-full object-cover'/>
             </div>}
             <div className='w-1/2 overflow-hidden p-10'>
                 <h1 className='text-3xl mb-10'>{title}</h1>
-                <p dangerouslySetInnerHTML={{ __html: content }} />
+                <div dangerouslySetInnerHTML={{ __html: content }} />
             </div>
         </div>
     )
