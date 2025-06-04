@@ -36,7 +36,6 @@ export default function Header() {
     useEffect(() => {        
         const handleScroll = () => {            
                 if(location == '/') {
-                    console.log('landingPageMenuTransform');
                     const offerPosition = document?.getElementById('offer')?.getBoundingClientRect().y;  
                     
                     if(window.scrollY < document.body.offsetHeight/2) {
@@ -47,7 +46,6 @@ export default function Header() {
                 }
 
                 if(location != '/') {
-                    console.log('subPageMenuTransform');
                     setMenuTransform(window.scrollY != 0);
                 }
             }
