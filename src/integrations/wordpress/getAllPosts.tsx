@@ -12,18 +12,9 @@ const getAllPosts = async (first = 1000): Promise<AllPostsType[]> => {
         date: post?.node?.date,
         excerpt: post?.node?.excerpt,
         title: post?.node?.title,
-        slug: post?.node?.slug,        
-        featuredImage: {
-            node: {
-                id: post?.node?.featuredImage?.node?.id,
-                sourceUrl: post?.node?.featuredImage?.node?.sourceUrl,
-            }
-        },
-        author: {
-            node: {
-                name: post?.node?.author?.node?.name,
-            }
-        }
+        slug: post?.node?.slug,    
+        featuredImage: post?.node?.featuredImage?.node?.sourceUrl,
+        author: post?.node?.author?.node?.name || 'no author',
     }));
 };
 

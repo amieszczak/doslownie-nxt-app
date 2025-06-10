@@ -1,8 +1,9 @@
-import Image from "next/image"
+import Image from "next/image";
+import Link from "next/link";
 
-export default function PostPreview({title, content, photo}: {title: string, content: string, photo?: string}) {
+export default function PostPreview({title, content, photo, url}: {title: string, content: string, photo?: string, url: string}) {
     return(
-        <div className='w-full h-[50vh] border border-black flex '>
+        <Link href={url} className='w-full h-[50vh] border border-black flex '>
             {photo 
             && 
             <div className='w-1/2 h-full'>
@@ -12,6 +13,6 @@ export default function PostPreview({title, content, photo}: {title: string, con
                 <h1 className='text-3xl mb-10'>{title}</h1>
                 <div dangerouslySetInnerHTML={{ __html: content }} />
             </div>
-        </div>
+        </Link>
     )
 }

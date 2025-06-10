@@ -7,23 +7,11 @@ export type SinglePostType = {
     modified: string,
     excerpt: string,
     slug: string,
-    featuredImage: {
-        node: {
-            link: string,
-        }
-    }
-    categories: {
-        nodes: {
-            name: string,
-            slug: string,
-            databaseId: string,
-        }
-    }
-    author: {
-        node: {
-            name: string,
-            slug: string,
-            description: string,
-        }
-    }
+    featuredImage: string,
+    categoriesName: string,
+    categoriesSlug: string,
+    categoriesDatabaseId: string,
+    authorName: string,
+    authorSlug: string,
+    authorDescription: string,
 }
