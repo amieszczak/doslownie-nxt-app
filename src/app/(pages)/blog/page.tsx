@@ -6,7 +6,6 @@ import PostPreview from "@/app/components/blog/postPreview/postPreview";
 export default async function BlogPage() {
 
     const posts = await getAllPosts();   
-    console.log('posts:', posts); 
 
     return(
         <>
