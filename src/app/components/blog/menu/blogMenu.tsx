@@ -19,7 +19,7 @@ export default async function BlogMenu() {
                                 <div className='flex flex-col gap-[1vw] ml-[10px]'>
                                     {category?.posts?.map((post, index) => {
                                         return(
-                                            <Link href={'/blog/' + post?.slug}>
+                                            <Link key={index} href={'/blog/' + post?.slug}>
                                                 {post?.title}
                                             </Link>                                                     
                                         )
