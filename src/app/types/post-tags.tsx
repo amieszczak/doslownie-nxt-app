@@ -1,8 +1,8 @@
 export type PostTagsType = {
-    name: string,
-    slug: string,
+    name: string;
+    slug: string;
     posts: {
-        title: string,
-        slug: string,
-    } []
-}
+        title: string;
+        slug: string;
+    }[];
+};

@@ -1,4 +1,5 @@
 const PostTags = `
+query getPostTags {
  tags {
     edges {
       node {
@@ -14,6 +15,7 @@ const PostTags = `
         }
       }
     }
-  }`;
+  }
+}`;
 
 export default PostTags;
