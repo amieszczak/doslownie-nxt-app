@@ -2,15 +2,12 @@
 import Image from "next/image";
 import video from '../../../../../public/entryVideo.gif';
 import classNames from "classnames";
-import { usePathname } from "next/navigation";
 import styles from './landingPageVideo.module.css';
 import { useState, useEffect } from "react";
 
 export default function LandingPageVideo() {
 
     const [titleVisible, setTitleVisible] = useState(true);
-
-    const location = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {            

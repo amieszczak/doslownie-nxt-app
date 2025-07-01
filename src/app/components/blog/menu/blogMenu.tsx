@@ -15,9 +15,9 @@ export default async function BlogMenu() {
                 <nav className='h-full flex flex-col gap-[2vw]'>
                     <h2 className='text-3xl font-bold italic'>Kategoria</h2>
                     {categories?.map((category, index) => {
-                        if(category?.name.toLowerCase() == 'uncategorized') {
+                       /*  if(category?.name.toLowerCase() == 'uncategorized') {
                             return;
-                        }
+                        } */
                         return(
                             <div key={index} className='flex flex-col gap-[1vw] ml-[10px]'>
                                 <h3 className='text-2xl font-bold'>{category?.name}</h3>                        

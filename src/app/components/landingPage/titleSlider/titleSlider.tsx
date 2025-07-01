@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/autoplay";
-import { usePathname } from 'next/navigation';
 import logoOpaqueLight from '../../../../../public/main/LOGO_OPAQUE_LIGHT.svg';
 import Image from 'next/image';
 
@@ -40,9 +39,10 @@ export default function TitleSlider({slogan}: {slogan : string}) {
                     }}
                     freeMode= {true}
                     >
-                    {sliderData.map(item => {
+                    {sliderData.map((item, index) => {
                         return(
                             <SwiperSlide
+                            key={index}
                             className={styles.slide}>
                                 <div className="flex items-center gap-10">
                                     <p className="text-8xl font-thin whitespace-nowrap uppercase hover:text-gray-800">{item.name}</p>

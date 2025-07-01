@@ -43,9 +43,10 @@ export default function HeaderSlider() {
                     }}
                     freeMode= {true}
                     >
-                    {tagData.map(item => {
+                    {tagData.map((item, index) => {
                         return(
                             <SwiperSlide
+                            key={index}
                             className={styles.slide}
                             >
                                 <div className="flex items-center gap-10">

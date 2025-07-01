@@ -1,5 +1,4 @@
 import React from "react";
-import classNames from "classnames";
 import classes from '../../page.module.css';
 import SubPageEntry from "@/app/components/subPageEntry/subPageEntry";
 

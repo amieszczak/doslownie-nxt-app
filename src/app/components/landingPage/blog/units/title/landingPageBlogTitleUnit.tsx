@@ -1,7 +1,5 @@
 import Image from "next/image";
 import classNames from "classnames";
-import Link from "next/link";
-import styles from './landingPageBlogTitleUnit.module.css';
 import classes from '../../../../../page.module.css';
 
 export default function LandingPageBlogTitleUnit({photoSrc, title, content}: {photoSrc: string, title?: string, content?: string}) {

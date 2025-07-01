@@ -1,3 +1,4 @@
+/* 'use client'; */
 import classes from '../../page.module.css';
 import styles from './subpageEntry.module.css';
 import classNames from 'classnames';
@@ -6,7 +7,7 @@ import Link from 'next/link';
 import location from '../../../../public/contact/location.svg';
 import message from '../../../../public/contact/message.svg';
 import phone from '../../../../public/contact/phone.svg';
-import LocationMap from '../map/map';
+/* import LocationMap from '../map/map'; */
 
 export default function SubPageEntry() {
     return (
@@ -34,7 +35,7 @@ export default function SubPageEntry() {
                 </Link>                
             </div>
             <div className={classNames({['w-1/2 h-full overflow-hidden']:true})}>
-                <LocationMap />
+               {/*  <LocationMap /> */}
             </div>
         </div>
     )

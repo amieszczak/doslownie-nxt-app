@@ -1,5 +1,4 @@
 'use client';
-import TitleSlider from "../titleSlider/titleSlider";
 import Markup from "../../markup/markup";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from "swiper/modules";
@@ -20,7 +19,7 @@ export default function LandingPageSpecialistsComponent() {
         {id: 4, name: 'Natalia Kupiec', description: 'Fusce vitae congue erat, vel commodo turpis. Vivamus sed diam at ligula euismod faucibus vehicula vitae arcu. Nullam luctus sagittis elementum. Mauris pharetra quis diam at venenatis. Vestibulum ultrices vel purus eget tempus. Vivamus nisi erat, vehicula sit amet egestas eget, lacinia pellentesque justo. Sed malesuada dui vel quam scelerisque, non rutrum ante condimentum. Integer blandit diam tortor, non lacinia metus euismod eget. Morbi non erat magna. Etiam pretium vel purus eu hendrerit.', photoSrc: '/specialists/natalia.png'},
     ]
 
-    let currentElement = SPECIALISTS_DATA.find(item => item.id == specialistId);
+    const currentElement = SPECIALISTS_DATA.find(item => item.id == specialistId);
 
     return(
         <div className="bg-white">
@@ -33,7 +32,7 @@ export default function LandingPageSpecialistsComponent() {
                     <LandingPageButton href={'o-nas'} title={'dowiedz się więcej'} variant={'right'}/>
                 </div>
                 <div className="w-1/2 overflow-hidden">     
-                <LandingPageUnitTitle title="nasze terapeutki mowy" variant=""/>
+                <LandingPageUnitTitle title="nasze terapeutki mowy"/>
                 <Swiper
                     className="h-full"
                     modules={[Autoplay, Pagination]}

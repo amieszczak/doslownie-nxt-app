@@ -21,7 +21,7 @@ export default function LandingPageOffer() {
         {id: 4, title: 'Terapia ręki', description: 'Terapia Ręki ma na celu usprawnianie tzw. małej motoryki, czyli precyzyjnych ruchów dłoni i palców, jak również dostarczania wrażeń dotykowych i poznawania dzięki nim różnych kształtów, struktur materiałów oraz nabywanie umiejętności ich rozróżniania. Przede wszystkim służy jednak do osiągnięcia samodzielności w podstawowych czynnościach życia codziennego.', photoSrc: '/offer/Terapia_reki_theme.png'},
     ]
 
-    let currentElement = OFFER_CONTENT.find(item => item.id == offerId);
+    const currentElement = OFFER_CONTENT.find(item => item.id == offerId);
 
     return(
         <div id="offer" className="bg-white">
