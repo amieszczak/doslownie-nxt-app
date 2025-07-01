@@ -1,4 +1,4 @@
-/* 'use client'; */
+'use client';
 import classes from '../../page.module.css';
 import styles from './subpageEntry.module.css';
 import classNames from 'classnames';
