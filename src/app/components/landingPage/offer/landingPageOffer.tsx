@@ -44,13 +44,7 @@ export default function LandingPageOffer() {
                     autoplay={{
                         delay: 5000,
                         disableOnInteraction: true,
-                    }}
-                    /* pagination={{
-                        clickable: true,
-                        el: `.${styles.paginationContainer}`,      
-                        bulletClass: 'swiper-pagination-bullet',
-                        bulletActiveClass: 'swiper-pagination-bullet-active', 
-                    }} */
+                    }}                    
 
                     onActiveIndexChange={(swiper) => setOfferId(swiper.realIndex + 1)}
                     >                        

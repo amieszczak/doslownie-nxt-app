@@ -34,21 +34,3 @@ export default function LocationMap() {
         </MapContainer>
     )
 }
-
-
-/* if(typeof window !== 'undefined' ) {
-    return(
-        <MapContainer center={[50.0619, 19.9368]} zoom={15} scrollWheelZoom={false} zoomControl={false}>
-            <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker position={[50.0619, 19.9368]}>
-            </Marker>
-        </MapContainer>
-    )
-} else {
-    return (
-        <></>
-    )
-} */

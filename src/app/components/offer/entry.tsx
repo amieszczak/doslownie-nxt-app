@@ -7,14 +7,6 @@ export default function OfferEntry({
   alt
 }: {pageTitle: string, entryInformation: string, photoSrc: string, alt?: string}) {
 
-  /* function handleScroll() {
-    const specialists = document.getElementById("specialists");
-
-    if(specialists) {
-      specialists.scrollIntoView({behavior: 'smooth'});
-    }
-  } */
-
   return (
     <>
       <section className='flex'>  

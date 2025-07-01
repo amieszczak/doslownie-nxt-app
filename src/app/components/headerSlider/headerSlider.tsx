@@ -2,7 +2,6 @@
 import styles from './headerSlider.module.css';
 import classes from '../../page.module.css';
 import classNames from 'classnames';
-/* import { Swiper, SwiperSlide } from 'swiper/react'; */
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import "swiper/css";

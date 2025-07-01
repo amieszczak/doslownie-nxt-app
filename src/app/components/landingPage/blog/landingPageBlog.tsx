@@ -9,8 +9,6 @@ export default async function LandingPageBlog() {
 
     const posts = await getAllPosts();    
 
-    /* const unitAppearance:string = 'w-1/3 h-[80%] border border-black backdrop-filter backdrop-blur-sm bg-opacity-10'; */
-
     return (       
         <div className={classNames({['w-screen flex items-center justify-between pt-50 pb-25 px-25 gap-25']:true, [styles.container]:true})}>
             <LandingPageBlogTitleUnit photoSrc={posts[0]?.featuredImage} title={posts[0]?.title} content={posts[0]?.content}/>        
