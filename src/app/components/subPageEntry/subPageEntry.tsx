@@ -7,9 +7,12 @@ import Link from 'next/link';
 import location from '../../../../public/contact/location.svg';
 import message from '../../../../public/contact/message.svg';
 import phone from '../../../../public/contact/phone.svg';
-import LocationMap from '../map/map';
+import dynamic from 'next/dynamic';
 
 export default function SubPageEntry() {
+
+    const LocationMap = dynamic(() => import('../map/map'), {ssr: false});
+
     return (
         <div className={classNames({[classes.subpageUnitHeight]: true, ['flex']:true})}>
             <div className={classNames({['w-1/2 p-10 flex flex-col gap-10 justify-center']: true, [styles.contentBottomMargin]:true})}>
