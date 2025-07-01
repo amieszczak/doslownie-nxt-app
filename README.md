@@ -7,7 +7,7 @@ This is redesigned version of [Papużka](https://www.figma.com/proto/bQbN65z1ecO
 This project is currently under development. Some features may be incomplete or subject to change.
 
 ## ![Web](/public/readme/mdi_web.svg?raw=true 'Web icon')   
-Check out the latest build <a href="https://doslownie-nxt-app.vercel.app/" target="_blank" rel="noopener noreferrer">here</a>
+Check out the latest build [here](https://doslownie-nxt-app.vercel.app/)
 
 ## Features included
 * Component construction 
