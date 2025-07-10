@@ -3,10 +3,10 @@ import classNames from "classnames";
 import Link from "next/link";
 import classes from '../../../../../page.module.css';
 
-export default function LandingPageBlogCommonUnit({photoSrc, title, content}: {photoSrc: string, title?: string, content?: string}) {
+export default function LandingPageBlogCommonUnit({photoSrc, title, content, href}: {photoSrc: string, title?: string, content?: string, href: string}) {
     return(
         <div className="h-full flex flex-col justify-between">
-            <div className={classNames({['border border-white backdrop-filter backdrop-blur-sm bg-opacity-10 relative h-full']: true, [classes.landingPageBlogContainer]:true})}>
+            <Link href={href} className={classNames({['border border-white backdrop-filter backdrop-blur-sm bg-opacity-10 relative h-full']: true, [classes.landingPageBlogContainer]:true})}>
                 {undefined != photoSrc 
                 ?
                 <div className='h-2/3 w-full overflow-hidden'>
@@ -22,8 +22,8 @@ export default function LandingPageBlogCommonUnit({photoSrc, title, content}: {p
                     />
                 </div>
             
-            </div>
-            <Link href={'/blog'} className='w-full h-15 block border border-white backdrop-filter backdrop-blur-sm bg-opacity-10 text-xl text-white flex items-center justify-center hover:bg-black hover:border-none'>
+            </Link>
+            <Link href={'/blog/'} className='w-full h-15 block border border-white backdrop-filter backdrop-blur-sm bg-opacity-10 text-xl text-white flex items-center justify-center hover:bg-black hover:border-none'>
                 Dowiedz się więcej
             </Link>
         </div>        

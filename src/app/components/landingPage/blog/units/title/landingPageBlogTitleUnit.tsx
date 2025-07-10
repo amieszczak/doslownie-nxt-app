@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import classNames from "classnames";
 import classes from '../../../../../page.module.css';
 
-export default function LandingPageBlogTitleUnit({photoSrc, title, content}: {photoSrc: string, title?: string, content?: string}) {
+export default function LandingPageBlogTitleUnit({photoSrc, title, content, href}: {photoSrc: string, title?: string, content?: string, href: string}) {
     return(
-        <div className='flex flex-col justify-between h-full'>
+        <Link href={href} className='flex flex-col justify-between h-full'>
             <h2 className='text-white text-7xl text-bold text-end font-bold h-25'>BLOG</h2>
             <div className={classNames({['border border-white backdrop-filter backdrop-blur-sm bg-opacity-10']: true, [classes.landingPageBlogContainer]:true})}>                        
                 {undefined != photoSrc 
@@ -22,6 +23,6 @@ export default function LandingPageBlogTitleUnit({photoSrc, title, content}: {ph
                     />
                 </div>
             </div>
-        </div>        
+        </Link>        
     )
 }
