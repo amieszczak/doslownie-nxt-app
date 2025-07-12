@@ -43,7 +43,7 @@ export default function Breadcrumbs() {
                 {linkChain?.map((item, index) => {
                     return(
                         <Link key={index} className='flex items-center' href={item.link}>
-                            <span className={classes.paragraphTertiary}>{item.name}</span>
+                            <span>{item.name}</span>
                             {index != linkChain.length - 1
                             &&
                             <Image alt='' width={30} height={30} src={chevron}/>}                            
