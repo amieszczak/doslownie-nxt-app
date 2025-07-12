@@ -7,6 +7,7 @@ const getAllPosts = async (first = 1000): Promise<AllPostsType[]> => {
     const response = await fetchAPI(allPosts, { first });
     const posts:AllPostsQl[] = response?.posts?.edges;
 
+
     return posts.map((post: AllPostsQl) => ({        
         content: post?.node?.content,
         date: post?.node?.date,
@@ -15,6 +16,14 @@ const getAllPosts = async (first = 1000): Promise<AllPostsType[]> => {
         slug: post?.node?.slug,    
         featuredImage: post?.node?.featuredImage?.node?.sourceUrl,
         author: post?.node?.author?.node?.name || 'no author',
+        categories: post?.node?.categories?.edges.map(category => ({
+            name: category.node.name,
+            slug: category.node.slug,
+        })),
+        tags: post?.node?.tags?.edges.map(category => ({
+            name: category.node.name,
+            slug: category.node.slug,
+        })),
     }));
 };
 

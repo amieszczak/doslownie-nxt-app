@@ -1,6 +1,7 @@
 import getSinglePost from "@/integrations/wordpress/getSinglePost";
 import classes from '../../../page.module.css';
 import Image from "next/image";
+import classNames from "classnames";
 
 export default async function Post({params}:{params: Promise<{ slug : string }>}) {
 
@@ -10,7 +11,7 @@ export default async function Post({params}:{params: Promise<{ slug : string }>}
     return(
         <div>
             <div className={classes.subpageTopMargin}></div>  
-            <div className='w-screen flex flex-col gap-10 items-center'>    
+            <div className={classNames({['w-screen flex flex-col gap-10 items-center']: true, [classes.breadcrumbsMargin]: true})}>    
                 {post?.featuredImage && (
                     <div className="w-full h-[75vh] overflow-hidden">
                         <Image src={post?.featuredImage} width={1920} height={1080} alt='zdjecie tytulowe' className='w-full h-full object-cover'/>     

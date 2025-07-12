@@ -19,6 +19,22 @@ query NewQuery {
             name
           }
         }
+        categories {
+          edges {
+            node {
+              name
+              slug
+            }
+          }
+        }
+        tags {
+          edges {
+            node {
+              name
+              slug
+            }
+          }
+        }
       }
     }
   }

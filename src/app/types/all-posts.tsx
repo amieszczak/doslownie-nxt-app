@@ -4,6 +4,14 @@ export type AllPostsType = {
     excerpt: string;
     title: string;
     slug: string;
-    featuredImage: string 
-    author: string
+    featuredImage: string;
+    author: string;
+    categories: {
+        name: string,
+        slug: string,
+    }[];
+    tags: {
+        name: string,
+        slug: string,
+    }[];
 }

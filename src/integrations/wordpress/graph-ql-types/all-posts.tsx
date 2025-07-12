@@ -9,12 +9,28 @@ export type AllPostsQl = {
       node: {
         id: string;
         sourceUrl: string;
-      }
-    }
+      };
+    };
     author: {
       node: {
         name: string;
-      }
-    }    
-  }
-}
+      };
+    };    
+    categories: {
+      edges: {
+        node: {
+          name: string;
+          slug: string;
+        };
+      }[];
+    };
+    tags: {
+      edges: {
+        node: {
+          name: string;
+          slug: string;
+        };
+      }[];
+    };
+  };
+};
