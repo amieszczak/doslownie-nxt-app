@@ -15,7 +15,7 @@ export default function SubPageEntry() {
 
     return (
         <div className={classNames({[classes.subpageUnitHeight]: true, ['flex']:true})}>
-            <div className={classNames({['w-1/2 p-10 flex flex-col gap-10 justify-center']: true, [styles.contentBottomMargin]:true})}>
+            <div className={classNames({['w-1/2 p-10 flex flex-col gap-10 justify-center mt-25']: true, [styles.contentBottomMargin]:true})}>
                 <h1 className='text-4xl'>Skontaktuj się z nami</h1>
                 <p>Jesteśmy dostępni od poniedziałku do piątku w godzinach popołudniowych w naszych gabinetach w Krakowie. Alternatywnie zapraszamy do kontaktu telefonicznego/mailowego lub przez nasz formularz kontaktowy.</p>                
                 <Link href='#' className='flex items-center gap-7'>
