@@ -24,3 +24,7 @@
 .blogMenuContainer {
     height: calc(100vh - var(--menu-primary-height)*2);
 }
+
+.breadcrumbsHeight {
+    height: calc(var(--menu-primary-height)/2)
+}

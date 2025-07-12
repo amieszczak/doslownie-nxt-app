@@ -12,6 +12,7 @@ import HeaderSlider from '../headerSlider/headerSlider';
 import logo from '../../../../public/main/LOGO.svg';
 import logoWhite from '../../../../public/main/LOGO_WHITE.svg';
 import { usePathname } from 'next/navigation';
+import Breadcrumbs from "../breadcrumbs/breadcrumbs";
 
 export default function Header() {
 
@@ -119,6 +120,9 @@ export default function Header() {
                 </div>            
             </div>      
             <span className={classNames({['bg-gray-400 backdrop-filter backdrop-blur-sm opacity-100 w-screen']: true, [styles.blurredDropdownBackground]:isDropdownOpened, [classes.menuBarHeight]:true, [styles.blurredDropdownBackgroundScrolled]: menuTransform })}></span> 
-        </header>        
+            {!menuTransform 
+            &&
+            <Breadcrumbs/>}
+        </header>                  
     )
 }
