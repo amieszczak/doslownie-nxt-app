@@ -14,4 +14,4 @@ export default async function LandingPageBlog() {
             <LandingPageBlogCommonUnit href={'/blog/' + posts[1]?.slug} photoSrc={posts[1]?.featuredImage} title={posts[1]?.title} content={posts[1]?.content}/>
         </div>
     )
-}        
+}
