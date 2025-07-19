@@ -40,7 +40,7 @@ export default async function BlogMenu() {
                     <div className='w-1/4 flex gap-1 flex-wrap w-full'>                        
                         {tags?.map((tag, index) => {
                             return(
-                                <Link key={index} className='border border-black p-1 rounded-md hover:bg-black hover:text-white transition-colors duration-500' href={'/blog/' + tag.slug}>
+                                <Link key={index} className='border border-black p-1 rounded-md hover:bg-black hover:text-white transition-colors duration-500' href={'/blog/tag/' + tag.slug}>
                                     {tag.name}
                                 </Link>            
                             )
