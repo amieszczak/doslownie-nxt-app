@@ -3,6 +3,7 @@ export type PostCategoriesQl = {
       edges: {
         node: {
           name: string;
+          slug: string;
           posts: {
             nodes: {
               title: string;

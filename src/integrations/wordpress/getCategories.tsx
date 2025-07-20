@@ -12,6 +12,7 @@ const getCategories = async (first = 1000): Promise<PostCategoriesType[]> => {
 
     return {
       name: node.name,
+      slug: node.slug,
       posts: node.posts.nodes.map(post => ({
         title: post.title,
         slug: post.slug,

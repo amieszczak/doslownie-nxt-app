@@ -4,6 +4,7 @@ query getPostCategories {
     edges {
       node {
         name
+        slug
         posts {
           nodes {
             title

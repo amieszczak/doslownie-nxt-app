@@ -1,0 +1,7 @@
+.margin {
+    margin-right: calc(var(--menu-primary-height)/2);
+}
+
+.gap {
+    gap: calc(var(--menu-primary-height)/2);
+}

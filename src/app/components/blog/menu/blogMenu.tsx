@@ -4,8 +4,7 @@ import getTags from "@/integrations/wordpress/getTags";
 import classes from '../../../page.module.css';
 import classNames from "classnames";
 
-export default async function BlogMenu() {
-
+export default async function BlogMenu({ slug }: { slug?: string }) {
     const categories = await getCategories();
     const tags = await getTags();
 
@@ -20,7 +19,9 @@ export default async function BlogMenu() {
                         }
                         return(
                             <div key={index} className='flex flex-col gap-[1vw] ml-[10px]'>
-                                <h3 className='text-2xl font-bold'>{category?.name}</h3>                        
+                                <Link className='group' href={'/blog/kategoria/' + category?.slug}>                                
+                                    <h3 className={classNames({['text-2xl font-bold group-hover:bg-black group-hover:text-white']: true, ['bg-black text-white']: category?.slug == slug})}>{category?.name}</h3>                                    
+                                </Link>
                                 <div className='flex flex-col gap-[1vw] ml-[10px]'>
                                     {category?.posts?.map((post, index) => {    
                                         if(index < 2) {
@@ -40,7 +41,7 @@ export default async function BlogMenu() {
                     <div className='w-1/4 flex gap-1 flex-wrap w-full'>                        
                         {tags?.map((tag, index) => {
                             return(
-                                <Link key={index} className='border border-black p-1 rounded-md hover:bg-black hover:text-white transition-colors duration-500' href={'/blog/tag/' + tag.slug}>
+                                <Link key={index} className={classNames({['border border-black p-1 rounded-md hover:bg-black hover:text-white transition-colors duration-500']: true, ['bg-black text-white']: tag?.slug == slug})} href={'/blog/tag/' + tag.slug}>
                                     {tag.name}
                                 </Link>            
                             )

@@ -42,7 +42,7 @@ export default function Breadcrumbs() {
             <div className={classNames({['flex border-b border-black w-max pl-25']:true, [classes.breadcrumbsHeight]:true, [styles.topMargin]: true})}>
                 {linkChain?.map((item, index) => {
                     return(
-                        <Link key={index} className='flex items-center' href={item.link}>
+                        <Link key={index} className='flex items-center' href={item.link == '/blog/kategoria' || item.link == '/blog/tag' ? '#' : item.link}>
                             <span>{item.name}</span>
                             {index != linkChain.length - 1
                             &&

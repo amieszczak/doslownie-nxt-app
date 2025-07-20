@@ -10,9 +10,6 @@ type Taxonomy = {
 
 export default function PostPreview({title, content, photo, url, categories, tags}: {title: string, content: string, photo?: string, url: string, categories?: Taxonomy[], tags?: Taxonomy[]}) {
         
-
-    console.log('categoriesPostPreview:', categories);
-
     return(
         <div className='w-full h-[50vh] border border-black flex '>
             {photo 
