@@ -7,9 +7,11 @@ import classNames from "classnames";
 export default async function BlogMenu({ slug }: { slug?: string }) {
     const categories = await getCategories();
     const tags = await getTags();
+    const currTime = new Date().toTimeString();
 
     return (
         <div className={classNames({[classes.blogMenuContainer]: true, ['h-[100vh] flex items-center fixed']:true})}>
+            <div>{currTime}</div>
             <aside className={'border-l border-black p-[10px]'}>
                 <nav className='h-full flex flex-col gap-[2vw]'>
                     <h2 className='text-3xl font-bold italic'>Kategoria</h2>

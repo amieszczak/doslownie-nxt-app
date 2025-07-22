@@ -58,8 +58,11 @@ export default function Header() {
             }
     }, [location])
 
+    const currTime = new Date().toTimeString();
+
     return(
         <header className="fixed z-100">
+            <div>{currTime}</div>
             <div className={classNames({['flex items-center gap-5 w-screen px-25 border-bottom border-black bg-white relative']: true, 
                                         ['border']: !LPHeaderTop,
                                         [ `${styles.headerLandingPageTop} hover:bg-gray-400 hover:backdrop-filter hover:backdrop-blur-sm hover:bg-opacity-10`]: LPHeaderTop, 
