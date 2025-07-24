@@ -13,8 +13,9 @@ import logo from '../../../../public/main/LOGO.svg';
 import logoWhite from '../../../../public/main/LOGO_WHITE.svg';
 import { usePathname } from 'next/navigation';
 import Breadcrumbs from "../breadcrumbs/breadcrumbs";
+import { PostTagsType } from "@/app/types/post-tags";
 
-export default function Header() {
+export default function Header({tags}: {tags: PostTagsType[] | null}) {
 
     const [isDropdownOpened, setDropdownOpened] = useState(false);
     const [menuTransform, setMenuTransform] = useState(false);
@@ -116,7 +117,7 @@ export default function Header() {
                     })}
                 </nav>
                 <div className={classNames({["absolute bottom-0 left-0 border-b border-black w-screen translate-y-full overflow-hidden transition duration-500"]: true, [styles.borderHide]:LPHeaderTop, [styles.headerSliderScrollHide]:menuTransform})}>
-                    <HeaderSlider/>
+                    <HeaderSlider tags={tags}/>
                 </div>            
             </div>      
             <span className={classNames({['bg-gray-400 backdrop-filter backdrop-blur-sm opacity-100 w-screen']: true, [styles.blurredDropdownBackground]:isDropdownOpened, [classes.menuBarHeight]:true, [styles.blurredDropdownBackgroundScrolled]: menuTransform })}></span> 

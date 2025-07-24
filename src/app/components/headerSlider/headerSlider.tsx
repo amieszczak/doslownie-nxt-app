@@ -9,20 +9,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import logoOpaqueLight from '../../../../public/main/LOGO_OPAQUE_LIGHT.svg';
 import Image from 'next/image';
+import { PostTagsType } from '@/app/types/post-tags';
 
-const tagData: Array<{name : string}> = [
-    {name: 'opóźniony rozwój mowy'},
-    {name: 'dyslalia'},
-    {name: 'afazja'},
-    {name: 'jąkanie'},
-    {name: 'dyzartria'},
-    {name: 'terapia mowy'},
-    {name: 'alogia'},
-    {name: 'oligofazja'},
-    {name: 'mowa echolaliczna'},
-]
-
-export default function HeaderSlider() {
+export default function HeaderSlider({tags}: {tags: PostTagsType[] | null}) {
 
     const location = usePathname();
 
@@ -42,14 +31,14 @@ export default function HeaderSlider() {
                     }}
                     freeMode= {true}
                     >
-                    {tagData.map((item, index) => {
+                    {tags?.map((item, index) => {
                         return(
                             <SwiperSlide
                             key={index}
                             className={styles.slide}
                             >
                                 <div className="flex items-center gap-10">
-                                    <Link href='#' className="text-8xl font-bold whitespace-nowrap uppercase hover:text-gray-800">{item.name}</Link>
+                                    <Link href={'/blog/tag/' + item.slug} className="text-8xl font-bold whitespace-nowrap uppercase hover:text-gray-800">{item.name}</Link>
                                     <Image className='h-12' alt="logo" src={logoOpaqueLight}/>
                                 </div>                                
                             </SwiperSlide>

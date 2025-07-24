@@ -3,6 +3,8 @@ import "./globals.css";
 import Header from './components/header/header';
 import Footer from "./components/footer/footer";
 import { Poppins } from "next/font/google";
+import getTags from "@/integrations/wordpress/getTags";
+import { PostTagsType } from "./types/post-tags";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -15,17 +17,20 @@ export const metadata: Metadata = {
   description: "Centrum terapii neurologopedycznej Dosłownie",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const tags: PostTagsType[] | null = await getTags();
+
   return (
     <html lang="en">
       <body
         className={poppins.className}
       >
-        <Header/>
+        <Header tags={tags}/>
         {children}   
         <Footer/>
       </body>
