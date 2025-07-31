@@ -14,7 +14,7 @@ export default function Footer() {
         { title: 'Oferta', href: '/oferta' },
         { title: 'O nas', href: '/o-nas' },
         { title: 'Kontakt', href: '/kontakt' },
-        { title: 'Artykuły', href: '/artykuly' },
+        { title: 'Blog', href: '/blog' },
     ];
     
     const location = usePathname();
