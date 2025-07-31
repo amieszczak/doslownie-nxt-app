@@ -20,7 +20,7 @@ export default function Header({tags}: {tags: PostTagsType[] | null}) {
     const [isDropdownOpened, setDropdownOpened] = useState(false);
     const [menuTransform, setMenuTransform] = useState(false);
 
-    const Links: Array<{title : string, href : string, offerPages? : Array<{title : string, href : string}>}> = [
+    const LINKS: Array<{title : string, href : string, offerPages? : Array<{title : string, href : string}>}> = [
         { title: 'Oferta', href: '/oferta', offerPages: [
             {title: 'kosultacja logopedyczna', href: '/oferta/konsultacja-logopedyczna'},
             {title: 'terapia logopedyczna', href: '/oferta/terapia-logopedyczna'},
@@ -79,7 +79,7 @@ export default function Header({tags}: {tags: PostTagsType[] | null}) {
                     </div>                
                 </Link>
                 <nav className='flex flex-col md:flex-row justify-between w-1/2 ml-auto h-full'>            
-                    {Links.map((item, index) => {
+                    {LINKS.map((item, index) => {
                         return(
                             <div key={index} className="h-full">
                                 {item.offerPages 
