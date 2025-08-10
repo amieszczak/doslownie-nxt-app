@@ -3,6 +3,8 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import classes from '../../page.module.css';
 import classNames from 'classnames';
+import Image from 'next/image';
+import Link from 'next/link';
 import facebook from '../../../../public/socials/facebook.svg';
 import instagram from '../../../../public/socials/instagram.svg';
 import linkedin from '../../../../public/socials/linkedin.svg';
@@ -11,8 +13,6 @@ import facebook_black from '../../../../public/socials/facebook_black.svg';
 import instagram_black from '../../../../public/socials/instagram_black.svg';
 import linkedin_black from '../../../../public/socials/linkedin_black.svg';
 import x_twitter_black from '../../../../public/socials/x_twitter_black.svg';
-import Image from 'next/image';
-import Link from 'next/link';
 import facebook_black_hover from '../../../../public/socials/facebook_black_hover.svg';
 import instagram_black_hover from '../../../../public/socials/instagram_black_hover.svg';
 import linkedin_black_hover from '../../../../public/socials/linkedin_black_hover.svg';
@@ -34,7 +34,6 @@ export default function Footer() {
         iconBlack: any;
         iconBlackHover: any;
     };
-    
     
     const MENU_LINKS: MenuLink[] = [
         { title: 'Oferta', href: '/oferta' },
@@ -74,13 +73,12 @@ export default function Footer() {
         },
     ];
     
-    
     const location = usePathname();
     const isHomePage = location === '/'
     const colorClass = isHomePage ? 'white' : 'black';
 
     return (
-        <footer id='footer' className={classNames({[`w-screen backdrop-filter backdrop-blur-sm bg-opacity-10  border border-t-${colorClass}`]: true})}>
+        <footer id='footer' className={classNames({[`w-screen backdrop-filter backdrop-blur-sm bg-opacity-10  border-t border-${colorClass}`]: true})}>
             <nav className={classNames({['w-full px-25']: true, [classes.footerSectionHeight]: true})}>
                 <ul className={`flex justify-between items-center py-2 font-semibold border-b border-${colorClass}`}>
                     {MENU_LINKS.map((link) => (
@@ -91,7 +89,7 @@ export default function Footer() {
                 </ul>
             </nav>
             <div className={classNames({[`text-${colorClass} text-sm flex flex-col gap-2`]: true})}>
-                <div className="flex justify-between items-end px-25 pt-6 pb-2 h-1/2">
+                <div className={classNames({["flex justify-between items-end px-25 pb-2 h-1/2"]: true, ['pt-6']: isHomePage})}>
                     <a href="/polityka-prywatnosci" className={classNames({["hover:text-black"]: true, ['hover:underline']: !isHomePage})}>
                         Polityka prywatności
                     </a>
