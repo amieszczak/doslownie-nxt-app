@@ -5,3 +5,7 @@
 .contentBottomMargin {
     margin-bottom: var(--menu-primary-height); 
 }
+
+.pageHeight {
+    height: calc(100vh - (var(--menu-primary-height)*2 + var(--menu-primary-height-thin)*2));
+}

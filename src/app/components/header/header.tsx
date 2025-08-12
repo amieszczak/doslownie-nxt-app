@@ -65,7 +65,7 @@ export default function Header({tags}: {tags: PostTagsType[] | null}) {
                                         ['border']: !LPHeaderTop,
                                         [ `${styles.headerLandingPageTop} hover:bg-gray-400 hover:backdrop-filter hover:backdrop-blur-sm hover:bg-opacity-10`]: LPHeaderTop, 
                                         [classes.menuBarHeight]:true, 
-                                        [classes.menuBarHeightThin]: menuTransform})}>
+                                        [classes.menuBarHeightThin]: menuTransform})}>                
                 <Link href='/' className={classNames({["h-13 flex items-center gap-2"]:true, 
                                                         [styles.logoTransform]: menuTransform, 
                                                         [styles.headerTransformBack]: !menuTransform})}>

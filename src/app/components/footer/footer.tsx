@@ -1,9 +1,9 @@
 'use client';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import classes from '../../page.module.css';
+import styles from './footer.module.css';
 import classNames from 'classnames';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import facebook from '../../../../public/socials/facebook.svg';
 import instagram from '../../../../public/socials/instagram.svg';
@@ -30,9 +30,9 @@ export default function Footer() {
     type SocialLink = {
         name: string;
         href: string;
-        iconDefault: any;
-        iconBlack: any;
-        iconBlackHover: any;
+        iconDefault: StaticImageData;
+        iconBlack: StaticImageData;
+        iconBlackHover: StaticImageData;
     };
     
     const MENU_LINKS: MenuLink[] = [
@@ -78,8 +78,8 @@ export default function Footer() {
     const colorClass = isHomePage ? 'white' : 'black';
 
     return (
-        <footer id='footer' className={classNames({[`w-screen backdrop-filter backdrop-blur-sm bg-opacity-10  border-t border-${colorClass}`]: true})}>
-            <nav className={classNames({['w-full px-25']: true, [classes.footerSectionHeight]: true})}>
+        <footer id='footer' className={classNames({[`w-screen backdrop-filter backdrop-blur-sm bg-opacity-10 border-t border-${colorClass} relative bottom-0`]: true})}>
+            <nav className={classNames({['w-full px-25']: true, [styles.sectionHeight]: true})}>
                 <ul className={`flex justify-between items-center py-2 font-semibold border-b border-${colorClass}`}>
                     {MENU_LINKS.map((link) => (
                         <li className={classNames({[`text-${colorClass} hover:text-black`]: true, ['hover:underline']: !isHomePage})} key={link.href}>
@@ -88,7 +88,7 @@ export default function Footer() {
                     ))}
                 </ul>
             </nav>
-            <div className={classNames({[`text-${colorClass} text-sm flex flex-col gap-2`]: true})}>
+            <div className={classNames({[`text-${colorClass} text-sm flex flex-col gap-2`]: true/* , [styles.sectionHeight]: true */})}>
                 <div className={classNames({["flex justify-between items-end px-25 pb-2 h-1/2"]: true, ['pt-6']: isHomePage})}>
                     <a href="/polityka-prywatnosci" className={classNames({["hover:text-black"]: true, ['hover:underline']: !isHomePage})}>
                         Polityka prywatności

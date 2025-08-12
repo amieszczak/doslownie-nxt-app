@@ -1,0 +1,3 @@
+.sectionHeight {
+    height: calc(var(--menu-primary-height-thin));
+}

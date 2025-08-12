@@ -31,7 +31,9 @@ export default async function RootLayout({
         className={poppins.className}
       >
         <Header tags={tags}/>
-        {children}   
+        <div className="max-w-[1920px] mx-auto">
+          {children}   
+        </div>
         <Footer/>
       </body>
     </html>
