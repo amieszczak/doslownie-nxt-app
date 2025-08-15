@@ -23,7 +23,7 @@ export default function LandingPageVideo() {
     }, [])
 
     return(
-        <div className="w-screen h-screen relative">
+        <div className="w-screen h-screen relative ">
             <Image alt="animacja tytułowa" className="w-full h-full object-cover fixed z-[-2]" src={video}/>
             <div className={classNames({["fixed bottom-0 text-white"]: true, [styles.hide]: !titleVisible, [styles.show]: titleVisible})}>
                 <div className='relative border-t-2 border-white h-60 w-[84vw]'>

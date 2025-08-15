@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from './components/header/header';
+import Header_1 from "./components/header/header1";
 import Footer from "./components/footer/footer";
 import { Poppins } from "next/font/google";
 import getTags from "@/integrations/wordpress/getTags";
@@ -31,7 +32,7 @@ export default async function RootLayout({
         className={poppins.className}
       >
         <Header tags={tags}/>
-        <div className="max-w-[1920px] mx-auto">
+        <div /* className="max-w-[1920px] mx-auto" */>
           {children}   
         </div>
         <Footer/>

@@ -15,7 +15,7 @@ import { usePathname } from 'next/navigation';
 import Breadcrumbs from "../breadcrumbs/breadcrumbs";
 import { PostTagsType } from "@/app/types/post-tags";
 
-export default function Header({tags}: {tags: PostTagsType[] | null}) {
+export default function Header_1({tags}: {tags: PostTagsType[] | null}) {
 
     const [isDropdownOpened, setDropdownOpened] = useState(false);
     const [menuTransform, setMenuTransform] = useState(false);
@@ -112,7 +112,7 @@ export default function Header({tags}: {tags: PostTagsType[] | null}) {
                                                 </div>     
                                             </div>
                                         : <Link className="h-full flex items-center" href={item.href}>{item.title}</Link>
-                                    }
+                                    } 
                                 </div>                        
                             )
                         })}
