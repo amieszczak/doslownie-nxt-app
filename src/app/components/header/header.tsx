@@ -66,7 +66,6 @@ export default function Header({tags}: {tags: PostTagsType[] | null}) {
                                         [ `${styles.headerLandingPageTop} hover:bg-gray-400 hover:backdrop-filter hover:backdrop-blur-sm hover:bg-opacity-10`]: LPHeaderTop, 
                                         [classes.menuBarHeight]:true, 
                                         [classes.menuBarHeightThin]: menuTransform})}>        
-                {/* <div className='max-w-[1920px] mx-auto'> */}
                     <Link href='/' className={classNames({["h-13 flex items-center gap-2"]:true, 
                                                             [styles.logoTransform]: menuTransform, 
                                                             [styles.headerTransformBack]: !menuTransform})}>
@@ -117,7 +116,6 @@ export default function Header({tags}: {tags: PostTagsType[] | null}) {
                             )
                         })}
                     </nav>
-                {/* </div>       */} 
                 <div className={classNames({["absolute bottom-0 left-0 border-b border-black w-screen translate-y-full overflow-hidden transition duration-500"]: true, [styles.borderHide]:LPHeaderTop, [styles.headerSliderScrollHide]:menuTransform})}>
                     <HeaderSlider tags={tags}/>
                 </div>            

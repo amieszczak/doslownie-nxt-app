@@ -79,7 +79,7 @@ export default function Footer() {
 
     return (
         <footer id='footer' className={classNames({[`w-screen backdrop-filter backdrop-blur-sm bg-opacity-10 border-t border-${colorClass} relative bottom-0`]: true})}>
-            <nav className={classNames({['w-full px-25']: true, [styles.sectionHeight]: true})}>
+            <nav className={classNames({['w-full px-25 max-w-[1920px] mx-auto']: true, [styles.sectionHeight]: true})}>
                 <ul className={`flex justify-between items-center py-2 font-semibold border-b border-${colorClass}`}>
                     {MENU_LINKS.map((link) => (
                         <li className={classNames({[`text-${colorClass} hover:text-black`]: true, ['hover:underline']: !isHomePage})} key={link.href}>
@@ -88,7 +88,7 @@ export default function Footer() {
                     ))}
                 </ul>
             </nav>
-            <div className={classNames({[`text-${colorClass} text-sm flex flex-col gap-2`]: true/* , [styles.sectionHeight]: true */})}>
+            <div className={classNames({[`text-${colorClass} text-sm flex flex-col gap-2 max-w-[1920px] mx-auto`]: true/* , [styles.sectionHeight]: true */})}>
                 <div className={classNames({["flex justify-between items-end px-25 pb-2 h-1/2"]: true, ['pt-6']: isHomePage})}>
                     <a href="/polityka-prywatnosci" className={classNames({["hover:text-black"]: true, ['hover:underline']: !isHomePage})}>
                         Polityka prywatności
