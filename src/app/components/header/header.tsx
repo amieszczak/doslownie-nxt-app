@@ -108,7 +108,7 @@ export default function Header({tags}: {tags: PostTagsType[] | null}) {
                                                                     <Link className='whitespace-nowrap h-full flex items-center' key={index} href={element.href}>{element.title}</Link>
                                                                 )
                                                             })}
-                                                </div>     
+                                                </div> 
                                             </div>
                                         : <Link className="h-full flex items-center" href={item.href}>{item.title}</Link>
                                     }

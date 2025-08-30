@@ -3,7 +3,7 @@
     transition: 0.5s;
 }
 
-.dropdownOpen {    
+.dropdownOpen {        
     transform: scaleY(1);
     transition: 0.5s;
     border-bottom: 1px solid var(--color-primary);
@@ -79,4 +79,12 @@
 
 .headerSliderTransition {
     transition: 0.5s;
+}
+
+.test {
+    /* background-color: red; */
+}
+
+.dropdownTest {
+    background-color: blue;
 }

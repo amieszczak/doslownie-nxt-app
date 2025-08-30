@@ -59,14 +59,17 @@ export default function Header_1({tags}: {tags: PostTagsType[] | null}) {
             }
     }, [location])
 
+
+    useEffect(() => {console.log('isDropdownOpened:', isDropdownOpened)}, [isDropdownOpened])
+
     return(
-        <header className={classNames({["fixed z-100 border-b border-black relative"]: true, 
-                                    [styles.test]: true, 
+        <header className={classNames({["fixed z-100 w-screen"]: true, 
                                     [classes.menuBarHeight]:true,
-                                    [classes.menuBarHeightThin]: menuTransform 
+                                    [classes.menuBarHeightThin]: menuTransform,
+                                    ['border border-b border-black']: !LPHeaderTop,                                    
                                     })}>
-            <div className={classNames({['max-w-[1920px] mx-auto']: true, [styles.green]: true})}>
-                <div className='px-25 flex justify-between items-center w-full'>
+            <div className={classNames({['max-w-[1920px] mx-auto h-full']: true, [styles.green]: true, [ `${styles.headerLandingPageTop} hover:bg-gray-400 hover:backdrop-filter hover:backdrop-blur-sm hover:bg-opacity-10`]: LPHeaderTop,})}>
+                <div className='px-25 flex justify-between items-center w-full h-full'>
                     <Link href='/' className={classNames({["h-13 flex items-center gap-2 max-content"]:true, 
                                                             [styles.logoTransform]: menuTransform, 
                                                             [styles.headerTransformBack]: !menuTransform})}>
@@ -97,19 +100,19 @@ export default function Header_1({tags}: {tags: PostTagsType[] | null}) {
                                                     src={LPHeaderTop ? chevronDownWhite : chevronDown}
                                                     />
                                                 </Link>
-                                                    <div className={classNames({
-                                                        ['w-full flex justify-between absolute z-10 bottom-0 translate-y-full -translate-x-1/2 px-25 bg-white border-t border-black max-w-[1920px]']:true, 
-                                                        [classes.menuBarHeight]:true, 
-                                                        [classes.menuBarHeightThin]: menuTransform, 
-                                                        [styles.dropdownClose]:true, 
-                                                        [styles.dropdownOpen]: isDropdownOpened,                                                
-                                                        [styles.dropdownMainTop]: LPHeaderTop})}>
-                                                            {item.offerPages.map((element, index) => {
-                                                                return(
-                                                                    <Link className='whitespace-nowrap h-full flex items-center' key={index} href={element.href}>{element.title}</Link>
-                                                                )
-                                                            })}
-                                                    </div>     
+                                                <div className={classNames({
+                                                    ['w-full flex justify-between absolute z-10 bottom-0 translate-y-full -translate-x-1/2 px-25 bg-white border-t border-black max-w-[1920px]']:true, 
+                                                    [classes.menuBarHeight]:true, 
+                                                    [classes.menuBarHeightThin]: menuTransform, 
+                                                    [styles.dropdownClose]:true, 
+                                                    [styles.dropdownOpen]: isDropdownOpened, 
+                                                    [styles.dropdownMainTop]: LPHeaderTop})}>
+                                                        {item.offerPages.map((element, index) => {
+                                                            return(
+                                                                <Link className='whitespace-nowrap h-full flex items-center' key={index} href={element.href}>{element.title}</Link>
+                                                            )
+                                                        })}
+                                                </div>     
                                             </div>
                                         : <Link className="h-full flex items-center" href={item.href}>{item.title}</Link>
                                     }
@@ -117,15 +120,20 @@ export default function Header_1({tags}: {tags: PostTagsType[] | null}) {
                             )
                         })}
                     </nav>
+                    <div className={classNames({["absolute bottom-0 left-0 border-b border-black w-screen translate-y-full overflow-hidden transition duration-500"]: true, [styles.borderHide]:LPHeaderTop, [styles.headerSliderScrollHide]:menuTransform})}>                    
+                        <HeaderSlider tags={tags}/>
+                    </div>  
                 </div>
-                <div className={classNames({["absolute bottom-0 left-0 border-b border-black w-screen translate-y-full overflow-hidden transition duration-500"]: true, [styles.borderHide]:LPHeaderTop, [styles.headerSliderScrollHide]:menuTransform})}>                    
-                    <HeaderSlider tags={tags}/>
-                </div>  
-                {isDropdownOpened
-                &&
-                <span className="absolute bottom-0 left-0 translate-y-full border-b border-black w-screen h-full bg-white z-8"></span>
-                }
             </div>            
-        </header>                  
+            <span className={classNames({
+                ['fixed w-screen opacity-100']: true,
+                [styles.blurredDropdownBackground]: isDropdownOpened,
+                [classes.menuBarHeight]: true,
+                [styles.blurredDropdownBackgroundScrolled]: menuTransform })}>
+            </span>
+            {!menuTransform 
+            &&
+            <Breadcrumbs/>}
+        </header>                             
     )
 }
