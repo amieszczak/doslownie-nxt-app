@@ -23,7 +23,7 @@ export default function LandingPageSpecialistsComponent() {
 
     return(
         <div className="bg-white">
-            <div className="w-screen h-[75vh] relative flex justify-between">                                  
+            <div className="w-screen h-[75vh] max-w-[1920px] relative flex justify-between">                                  
                 <Markup variant={'left'} title={'o nas'} top={true}/>                
                 <div className="w-1/2 flex  flex-col justify-center px-25 gap-15">
                     <h2 className="text-4xl font-thin italic">{currentElement && currentElement.name}</h2>

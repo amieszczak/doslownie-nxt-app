@@ -7,7 +7,7 @@ import LandingPageButton from "../../landingPageButton/landingPageButton";
 export default function LandingPageTeamComponent() {
     return(
         <div className="bg-white">                        
-            <div className="w-screen h-[75vh] relative flex justify-between">                                  
+            <div className="w-screen h-[75vh] max-w-[1920px] relative flex justify-between">                                  
                 <Markup variant={'right'} title={'zespół'} top={true}/>
                 <div className="w-1/2 overflow-hidden">     
                     <LandingPageUnitTitle title='poznaj nasz zespół' additionalCssClass="justify-end"/>

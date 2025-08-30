@@ -9,6 +9,10 @@
     transition: 0.5s;
 }
 
+.pageMaxWidth {
+    max-width: 1920px;
+}
+
 .subpageTopMargin {
     height: calc(var(--menu-primary-height)*2);
     transition: 0.5s;

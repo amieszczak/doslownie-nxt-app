@@ -1,5 +1,6 @@
 import LandingPageVideo from "./components/landingPage/video/landingPageVideo";
 import LandingPageOffer from "./components/landingPage/offer/landingPageOffer";
+import LandingPageOffer_1 from "./components/landingPage/offer/landingPageOffer";
 import LandingPageTeamComponent from "./components/landingPage/team/landingPageTeamComponent";
 import LandingPageSpecialistsComponent from "./components/landingPage/specialists/landingPageSpecialistsComponent";
 import LandingPageBlog from "./components/landingPage/blog/landingPageBlog";
@@ -11,9 +12,9 @@ export default async function Home() {
   return (
     <>
       <LandingPageVideo_1/>
-      <LandingPageOffer/>
-      {/* <LandingPageTeamComponent/>
-      <LandingPageSpecialistsComponent/> */}
+      <LandingPageOffer_1/>
+      <LandingPageTeamComponent/>
+      <LandingPageSpecialistsComponent/>
       <LandingPageBlog />
     </>
   );

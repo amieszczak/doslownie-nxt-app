@@ -24,7 +24,7 @@ export default function LandingPageOffer() {
 
     return(
         <div id="offer" className="bg-white">
-            <div className="w-screen h-[75vh] relative flex justify-between max-w-[1920px] max-h-[1080px]">                  
+            <div className="w-screen h-[75vh] relative flex justify-between">                  
                 <div className="w-1/2 flex items-center">
                     <Markup variant={'left'} title={'oferta'} top={true}/>
                     <div className="flex flex-col px-25 gap-15">
