@@ -59,9 +59,6 @@ export default function Header_1({tags}: {tags: PostTagsType[] | null}) {
             }
     }, [location])
 
-
-    useEffect(() => {console.log('isDropdownOpened:', isDropdownOpened)}, [isDropdownOpened])
-
     return(
         <header className={classNames({["fixed z-100 w-screen"]: true, 
                                     [classes.menuBarHeight]:true,

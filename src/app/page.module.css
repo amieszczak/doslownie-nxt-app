@@ -5,6 +5,7 @@
 
 .menuBarHeightThin {
     height: var(--menu-primary-height-thin) !important;
+    background-color: #ffffff;
     transition: 0.5s;
 }
 
