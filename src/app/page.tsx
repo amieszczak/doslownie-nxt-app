@@ -5,14 +5,13 @@ import LandingPageTeamComponent from "./components/landingPage/team/landingPageT
 import LandingPageSpecialistsComponent from "./components/landingPage/specialists/landingPageSpecialistsComponent";
 import LandingPageBlog from "./components/landingPage/blog/landingPageBlog";
 import LandingPageVideo_1 from "./components/landingPage/video/landingPageVideo_1";
-import Sample from "./components/SAMPLE/sample";
 
 export default async function Home() {
 
   return (
     <>
       <LandingPageVideo_1/>
-      <LandingPageOffer_1/>
+      <LandingPageOffer/>
       <LandingPageTeamComponent/>
       <LandingPageSpecialistsComponent/>
       <LandingPageBlog />

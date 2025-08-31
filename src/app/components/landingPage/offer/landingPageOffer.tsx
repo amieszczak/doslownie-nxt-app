@@ -2,12 +2,14 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
-import styles from './landingPageOffer.module.css';
+import classes from './landingPageOffer.module.css';
+import styles from '../../../page.module.css';
 import Markup from '../../markup/markup';
 import { useState } from 'react';
 import Image from 'next/image';
 import LandingPageUnitTitle from '../unitTitle/landingPageUnitTitle';
 import LandingPageButton from '../../landingPageButton/landingPageButton';
+import classNames from 'classnames';
 
 export default function LandingPageOffer() {
 
@@ -24,7 +26,7 @@ export default function LandingPageOffer() {
 
     return(
         <div id="offer" className="bg-white">
-            <div className="w-screen h-[75vh] relative flex justify-between max-w-[1920px] max-h-[1080px]">                  
+            <div className={classNames({["w-screen h-[75vh] relative flex justify-between"]:true, [styles.pageMaxWidth]: true})}>                  
                 <div className="w-1/2 flex items-center">
                     <Markup variant={'left'} title={'oferta'} top={true}/>
                     <div className="flex flex-col px-25 gap-15">
@@ -51,7 +53,7 @@ export default function LandingPageOffer() {
                             <SwiperSlide key={index}>
                                 <Image                      
                                 src={item.photoSrc}
-                                className={styles.photo}
+                                className={classes.photo}
                                 width={1000}
                                 height={737}
                                 alt={item.title}

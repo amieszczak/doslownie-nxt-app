@@ -3,11 +3,13 @@ import Image from "next/image";
 import aboutImage from '../../../../../public/landingPage/about.png';
 import LandingPageUnitTitle from "../unitTitle/landingPageUnitTitle";
 import LandingPageButton from "../../landingPageButton/landingPageButton";
+import styles from '../../../page.module.css';
+import classNames from "classnames";
 
 export default function LandingPageTeamComponent() {
     return(
         <div className="bg-white">                        
-            <div className="w-screen h-[75vh] max-w-[1920px] relative flex justify-between">                                  
+            <div className={classNames({["w-screen h-[75vh] relative flex justify-between"]: true, [styles.pageMaxWidth]: true})}>                                  
                 <Markup variant={'right'} title={'zespół'} top={true}/>
                 <div className="w-1/2 overflow-hidden">     
                     <LandingPageUnitTitle title='poznaj nasz zespół' additionalCssClass="justify-end"/>
