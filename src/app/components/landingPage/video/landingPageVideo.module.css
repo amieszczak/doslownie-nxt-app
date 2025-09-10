@@ -6,3 +6,23 @@
 .show {
     transition: 1s;
 }
+
+.titleContainer {
+    height: min(11vw, 220px);
+    width: min(84.4vw, 1620px);
+}
+
+.title {
+    font-size: clamp(24px, 15vw, 288px);
+    position: absolute;
+    bottom: 0;
+    left: -1.1vw;
+    line-height: min(10vw, 200px);
+}
+
+.subtitle {
+    font-size: clamp(8px, 5vw, 96px);
+    position: absolute;
+    right: 0;
+    transform: translateY(-100%);
+}
