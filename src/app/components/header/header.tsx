@@ -20,6 +20,8 @@ export default function Header({ tags }: { tags: PostTagsType[] | null }) {
     const [isDropdownOpened, setDropdownOpened] = useState(false);
     const [menuTransform, setMenuTransform] = useState(false);
 
+    const [isMainMobileMenuActive, setMainMenuMobileActive] = useState(false);
+
     const LINKS: Array<{ title: string, href: string, offerPages?: Array<{ title: string, href: string }> }> = [
         {
             title: 'Oferta', href: '/oferta', offerPages: [
@@ -75,14 +77,16 @@ export default function Header({ tags }: { tags: PostTagsType[] | null }) {
                         [styles.logoTransform]: menuTransform,
                         [styles.headerTransformBack]: !menuTransform
                     })}>
-                        <Image alt="logo" src={LPHeaderTop ? logoWhite : logo} className="size-full" />
-                        <div className={classNames({['flex flex-col justify-center leading-none']:true, 
-                                                    [styles.titleTransform]: menuTransform, 
-                                                    [styles.headerTransformBack]: !menuTransform, 
-                                                    [styles.headerTitleHide]: LPHeaderTop})}>
+                        <Image alt="logo" src={LPHeaderTop && !isMainMobileMenuActive ? logoWhite : logo} className="size-full" />
+                        <div className={classNames({
+                            ['flex flex-col justify-center leading-none']: true,
+                            [styles.titleTransform]: menuTransform,
+                            [styles.headerTransformBack]: !menuTransform,
+                            [styles.headerTitleHide]: LPHeaderTop
+                        })}>
                             <p className="text-2xl font-thin">DOSŁOWNIE</p>
                             <p className="text-base font-thin">NEUROLOGOPEDIA</p>
-                        </div>                
+                        </div>
                     </Link>
                     <nav className='flex flex-col md:flex-row justify-between w-1/2 ml-auto h-full'>
                         {LINKS.map((item, index) => {
@@ -125,7 +129,19 @@ export default function Header({ tags }: { tags: PostTagsType[] | null }) {
                             )
                         })}
                     </nav>
-                    <div className={classNames({ ["absolute bottom-0 left-0 border-b border-black w-screen translate-y-full overflow-hidden transition duration-500"]: true, [styles.borderHide]: LPHeaderTop, [styles.headerSliderScrollHide]: menuTransform })}>
+                    <div className='block md:hidden h-full aspect-square'>
+                        <div className={classNames({
+                            [styles.headerToggle]: true,
+                            [styles.headerToggleAnimation]: isMainMobileMenuActive,
+                            [styles.headerToggleLandingPageTop]: LPHeaderTop,
+                            [styles.headerToggleAnimationLandingPageTop]: LPHeaderTop && isMainMobileMenuActive
+                        })}
+                            onClick={() => setMainMenuMobileActive(!isMainMobileMenuActive)}
+                        ></div>
+                    </div>
+                    <div className={classNames({ ["absolute bottom-0 left-0 border-b border-black w-screen translate-y-full overflow-hidden transition duration-500"]: true, 
+                        [styles.borderHide]: LPHeaderTop, 
+                        [styles.headerSliderScrollHide]: menuTransform})}>
                         <HeaderSlider tags={tags} />
                     </div>
                 </div>

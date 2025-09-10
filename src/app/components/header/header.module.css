@@ -36,7 +36,7 @@
 
 .headerLandingPageTop {
     background: none ;
-    color: #ffffff ;
+    color: #fff ;
     font-weight: 600 ;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .borderHide {
-    border-bottom: 1px solid #ffffff !important;
+    border-bottom: 1px solid #fff !important;
     width: 50vw !important;
     right: 0 !important; 
     left: auto !important;
@@ -53,8 +53,8 @@
 
 .dropdownMainTop {
     background: none;
-    border-top: 1px solid #ffffff;
-    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
 }
 
 .blurredDropdownBackground {
@@ -81,10 +81,99 @@
     transition: 0.5s;
 }
 
-.test {
-    /* background-color: red; */
-}
+.headerToggle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(64px, 9.3vw, 130px);
+    height: clamp(64px, 9.3vw, 130px);
+  }
 
-.dropdownTest {
-    background-color: blue;
-}
+  .headerToggle::before {
+    content: "";
+    position: absolute;
+    width: clamp(45px, 6.4vw, 90px);
+    height: clamp(1px, 0.4vw, 5px);
+    background: #000;
+    transform: translateY(clamp(-20px, -1.4vw, 0px));
+    box-shadow: 0 clamp(0px, 1.4vw, 20px) #000;
+    transition: 0.5s;
+  }
+
+  .headerToggle::after {
+    content: "";
+    position: absolute;
+    width: clamp(45px, 6.4vw, 90px);
+    height: clamp(1px, 0.4vw, 5px);
+    background: #000;
+    transform: translateY(clamp(0px, 1.4vw, 20px));
+    transition: 0.5s;
+  }
+
+  .headerToggleAnimation::before {
+    transform: rotate(45deg);
+    background: #000;
+    box-shadow: 0 0 #000;
+    transition: 0.5s;
+  }
+
+  .headerToggleAnimation::after {
+    transform: rotate(315deg);
+    background: #000;
+    transition: 0.5s;
+  }
+
+  /* ////////////// */
+
+  /* .headerToggleLandingPageTop::before {
+    box-shadow: 0 clamp(0px, 1.4vw, 20px) #fff !important;
+    background: #fff !important;
+  }
+
+  .headerToggleLandingPageTop::after {
+    background: #fff !important;
+  } 
+
+  .headerToggleAnimationLandingPageTop::before {
+    background: #000;
+    box-shadow: 0 0 #000;
+  }
+
+  .headerToggleAnimationLandingPageTop::after {
+    background: #000 !important;
+  } */
+
+  .headerToggleLandingPageTop::before {
+    content: "";
+    position: absolute;
+    width: clamp(45px, 6.4vw, 90px);
+    height: clamp(1px, 0.4vw, 5px);
+    background: #fff;
+    transform: translateY(clamp(-20px, -1.4vw, 0px));
+    box-shadow: 0 clamp(0px, 1.4vw, 20px) #fff;
+    transition: 0.5s;
+  }
+
+  .headerToggleLandingPageTop::after {
+    content: "";
+    position: absolute;
+    width: clamp(45px, 6.4vw, 90px);
+    height: clamp(1px, 0.4vw, 5px);
+    background: #fff;
+    transform: translateY(clamp(0px, 1.4vw, 20px));
+    transition: 0.5s;
+  } 
+
+  .headerToggleAnimationLandingPageTop::before {
+    transform: rotate(45deg);
+    background: #000;
+    box-shadow: 0 0 #000;
+    transition: 0.5s;
+  }
+
+  .headerToggleAnimationLandingPageTop::after {
+    transform: rotate(315deg);
+    background: #000;
+    transition: 0.5s;
+  } 

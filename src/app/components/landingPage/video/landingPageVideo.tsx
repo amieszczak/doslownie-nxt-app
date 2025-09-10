@@ -23,7 +23,7 @@ export default function LandingPageVideo() {
         }
     }, [])
 
-    const dimensionsInitial = 'max-h-[1080px] max-w-[1920px] h-screen w-screen'; 
+    const dimensionsInitial = 'max-h-[1080px] max-w-[1920px] h-[50vh] md:h-screen w-screen'; 
     const dimensionsScrolled = 'max-w-[1920px] h-screen w-screen'
 
     return(
