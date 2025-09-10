@@ -1,5 +1,4 @@
 import LandingPageOffer from "./components/landingPage/offer/landingPageOffer";
-import LandingPageOffer_1 from "./components/landingPage/offer/landingPageOffer";
 import LandingPageTeamComponent from "./components/landingPage/team/landingPageTeamComponent";
 import LandingPageSpecialistsComponent from "./components/landingPage/specialists/landingPageSpecialistsComponent";
 import LandingPageBlog from "./components/landingPage/blog/landingPageBlog";

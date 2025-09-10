@@ -74,7 +74,7 @@ export default function Footer() {
     ];
     
     const location = usePathname();
-    const isHomePage = location === '/'
+    const isHomePage = location === '/';
     const colorClass = isHomePage ? 'white' : 'black';
 
     return (
@@ -112,9 +112,9 @@ export default function Footer() {
                                     height={28}
                                     className={classNames({["transition-opacity duration-300 ease-in-out group-hover:opacity-0 absolute"]: isHomePage, ['opacity-0']: !isHomePage})}
                                 />
-                                <Image
-                                    onMouseEnter={() => {!isHomePage && setIconHoverIndex(index)}}
-                                    onMouseLeave={() => {!isHomePage && setIconHoverIndex(null)}}
+                                <Image 
+                                    onMouseEnter={() => !isHomePage && setIconHoverIndex(index)}
+                                    onMouseLeave={() => !isHomePage && setIconHoverIndex(null)}
                                     src={iconHoverIndex === index ? social.iconBlackHover : social.iconBlack}
                                     alt={`${social.name} hover`}
                                     width={28}
