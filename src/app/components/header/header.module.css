@@ -123,27 +123,7 @@
     background: #000;
     transition: 0.5s;
   }
-
-  /* ////////////// */
-
-  /* .headerToggleLandingPageTop::before {
-    box-shadow: 0 clamp(0px, 1.4vw, 20px) #fff !important;
-    background: #fff !important;
-  }
-
-  .headerToggleLandingPageTop::after {
-    background: #fff !important;
-  } 
-
-  .headerToggleAnimationLandingPageTop::before {
-    background: #000;
-    box-shadow: 0 0 #000;
-  }
-
-  .headerToggleAnimationLandingPageTop::after {
-    background: #000 !important;
-  } */
-
+  
   .headerToggleLandingPageTop::before {
     content: "";
     position: absolute;

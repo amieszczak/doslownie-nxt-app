@@ -21,6 +21,7 @@ export default function Header({ tags }: { tags: PostTagsType[] | null }) {
     const [menuTransform, setMenuTransform] = useState(false);
 
     const [isMainMobileMenuActive, setMainMenuMobileActive] = useState(false);
+    const [isMobileView, setMobileView] = useState(false);
 
     const LINKS: Array<{ title: string, href: string, offerPages?: Array<{ title: string, href: string }> }> = [
         {
@@ -61,7 +62,22 @@ export default function Header({ tags }: { tags: PostTagsType[] | null }) {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         }
-    }, [location])
+    }, [location]);
+
+    useEffect(() => {
+
+        setMobileView(window.innerWidth < 768);
+
+        const handleResize = () => {
+            setMobileView(window.innerWidth < 768);
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        }
+    }, [])
 
     return (
         <header className={classNames({
@@ -70,14 +86,14 @@ export default function Header({ tags }: { tags: PostTagsType[] | null }) {
             [classes.menuBarHeightThin]: menuTransform,
             ['border border-b border-black']: !LPHeaderTop,
         })}>
-            <div className={classNames({ ['max-w-[1920px] mx-auto h-full']: true, [styles.green]: true, [`${styles.headerLandingPageTop} hover:bg-gray-400 hover:backdrop-filter hover:backdrop-blur-sm hover:bg-opacity-10`]: LPHeaderTop, })}>
+            <div className={classNames({ ['max-w-[1920px] mx-auto h-full']: true, [styles.green]: true, [`${styles.headerLandingPageTop} hover:bg-gray-400 hover:backdrop-filter hover:backdrop-blur-sm hover:bg-opacity-10`]: LPHeaderTop && !isMobileView })}>
                 <div className='px-25 flex justify-between items-center w-full h-full'>
                     <Link href='/' className={classNames({
                         ["h-13 flex items-center gap-2 max-content"]: true,
                         [styles.logoTransform]: menuTransform,
                         [styles.headerTransformBack]: !menuTransform
                     })}>
-                        <Image alt="logo" src={LPHeaderTop && !isMainMobileMenuActive ? logoWhite : logo} className="size-full" />
+                        <Image alt="logo" src={LPHeaderTop && !isMainMobileMenuActive ? logoWhite : logo} className={classNames({["size-full"]: true, ['relative z-100']: isMainMobileMenuActive})} />
                         <div className={classNames({
                             ['flex flex-col justify-center leading-none']: true,
                             [styles.titleTransform]: menuTransform,
@@ -88,7 +104,7 @@ export default function Header({ tags }: { tags: PostTagsType[] | null }) {
                             <p className="text-base font-thin">NEUROLOGOPEDIA</p>
                         </div>
                     </Link>
-                    <nav className='flex flex-col md:flex-row justify-between w-1/2 ml-auto h-full'>
+                    <nav className={classNames({['flex justify-between']: true, ['absolute left-1/2 translate-x-[-50%] top-0 text-black flex-col h-screen py-[10vh] bg-white px-[20vw]']: isMobileView,['hidden']: !isMainMobileMenuActive ,['flex-row w-1/2 ml-auto h-full']: !isMobileView})}>
                         {LINKS.map((item, index) => {
                             return (
                                 <div key={index} className="h-full">
@@ -102,19 +118,22 @@ export default function Header({ tags }: { tags: PostTagsType[] | null }) {
                                                 ['block h-full flex items-center text-base']: true
                                             })} href={item.href}>
                                                 <p>{item.title}</p>
-                                                <Image
-                                                    alt='chevron down'
-                                                    className={classNames({ [styles.chevronClosed]: true, [styles.chevronOpened]: isDropdownOpened })}
-                                                    src={LPHeaderTop ? chevronDownWhite : chevronDown}
-                                                />
+                                                {!isMobileView &&
+                                                    <Image
+                                                        alt='chevron down'
+                                                        className={classNames({ [styles.chevronClosed]: true, [styles.chevronOpened]: isDropdownOpened })}
+                                                        src={LPHeaderTop ? chevronDownWhite : chevronDown}
+                                                    />
+                                                }
                                             </Link>
                                             <div className={classNames({
-                                                ['w-full flex justify-between absolute z-10 bottom-0 translate-y-full -translate-x-1/2 px-25 bg-white border-t border-black max-w-[1920px]']: true,
-                                                [classes.menuBarHeight]: true,
-                                                [classes.menuBarHeightThin]: menuTransform,
-                                                [styles.dropdownClose]: true,
+                                                ['w-full flex justify-between absolute z-10 bottom-0 translate-y-full -translate-x-1/2 px-25 bg-white border-t border-black max-w-[1920px]']: !isMobileView,
+                                                [classes.menuBarHeight]: !isMobileView,
+                                                [classes.menuBarHeightThin]: menuTransform && !isMobileView,
+                                                [styles.dropdownClose]: !isMobileView,
                                                 [styles.dropdownOpen]: isDropdownOpened,
-                                                [styles.dropdownMainTop]: LPHeaderTop
+                                                [styles.dropdownMainTop]: LPHeaderTop,
+                                                ['flex flex-col items-end translate-y-[-50%]']: isMobileView,
                                             })}>
                                                 {item.offerPages.map((element, index) => {
                                                     return (
