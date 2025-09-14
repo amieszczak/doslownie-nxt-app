@@ -27,7 +27,7 @@ export default function LandingPageOffer() {
 
     return(
         <div id="offer" className="bg-white">
-            <div className={classNames({["w-screen h-[75vh] relative flex justify-between"]:true, [styles.pageMaxWidth]: true})}>                  
+            <div className={classNames({["w-screen sm:h-[75vh] relative flex flex-col-reverse sm:flex-row justify-between"]:true, [styles.pageMaxWidth]: true})}>                  
                 {/* <div className="w-1/2 flex items-center">
                     <Markup variant={'left'} title={'oferta'} top={true}/>
                     <div className="flex flex-col px-25 gap-15">
@@ -37,7 +37,7 @@ export default function LandingPageOffer() {
                     </div>            
                 </div> */}
                 <LandingPageDescription title={currentElement && currentElement.title} description={currentElement && currentElement.description} href={OFFER_CONTENT.find(item => item.id == offerId)?.href} />
-                <div className="w-1/2 overflow-hidden">
+                <div className="sm:w-1/2 h-[50vh] sm:h-full overflow-hidden">
                     <LandingPageUnitTitle title={'Oferta dosłownie'} />
                     <Swiper
                     className="h-full"
