@@ -10,9 +10,9 @@ export default async function Home() {
     <>
       <LandingPageVideo/>
       <LandingPageOffer/>
-      <LandingPageTeamComponent/>
+      {/* <LandingPageTeamComponent/>
       <LandingPageSpecialistsComponent/>
-      <LandingPageBlog />
+      <LandingPageBlog /> */}
     </>
   );
 }
