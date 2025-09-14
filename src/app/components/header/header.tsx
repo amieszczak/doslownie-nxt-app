@@ -106,10 +106,10 @@ export default function Header({ tags }: { tags: PostTagsType[] | null }) {
                             <p className="text-base font-thin">NEUROLOGOPEDIA</p>
                         </div>
                     </Link>
-                    <nav className={classNames({['flex justify-between']: true, ['absolute left-1/2 translate-x-[-50%] top-0 text-black flex-col h-screen py-[10vh] bg-white px-[20vw]']: isMobileView,['hidden']: isMobileView && !isMainMobileMenuActive ,['flex-row w-1/2 ml-auto h-full']: !isMobileView})}>
+                    <nav className={classNames({['flex']: true, ['absolute left-1/2 translate-x-[-50%] top-0 text-black flex-col h-screen w-screen py-[10vh] bg-white px-25 gap-25']: isMobileView, ['hidden']: isMobileView && !isMainMobileMenuActive ,['flex-row w-1/2 ml-auto h-full justify-between']: !isMobileView})}>
                         {LINKS.map((item, index) => {
                             return (
-                                <div key={index} className="h-full">
+                                <div key={index} className={classNames({["h-full"]: !isMobileView})}>
                                     {item.offerPages
                                         ? <div
                                             className='h-full'
@@ -119,7 +119,8 @@ export default function Header({ tags }: { tags: PostTagsType[] | null }) {
                                                 onClick = {() => setMainMenuMobileActive(false)}
                                                 className={classNames({
                                                 [styles.back]: true,
-                                                ['block h-full flex items-center text-base']: true
+                                                ['block flex items-center text-base']: true,
+                                                ['h-full']: !isMobileView
                                             })} href={item.href}>
                                                 <p>{item.title}</p>
                                                 {!isMobileView &&
@@ -137,7 +138,7 @@ export default function Header({ tags }: { tags: PostTagsType[] | null }) {
                                                 [styles.dropdownClose]: !isMobileView,
                                                 [styles.dropdownOpen]: isDropdownOpened,
                                                 [styles.dropdownMainTop]: LPHeaderTop,
-                                                ['flex flex-col items-end translate-y-[-50%]']: isMobileView,
+                                                ['flex flex-col gap-10 pt-15 pl-5']: isMobileView,
                                             })}>
                                                 {item.offerPages.map((element, index) => {
                                                     return (
