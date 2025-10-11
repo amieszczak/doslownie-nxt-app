@@ -87,7 +87,7 @@ export default function Header({ tags }: { tags: PostTagsType[] | null }) {
             ['border border-b border-black']: !LPHeaderTop,
         })}>
             <div className={classNames({ ['max-w-[1920px] mx-auto h-full']: true, [styles.green]: true, [`${styles.headerLandingPageTop} hover:bg-gray-400 hover:backdrop-filter hover:backdrop-blur-sm hover:bg-opacity-10`]: LPHeaderTop && !isMobileView })}>
-                <div className='px-25 flex justify-between items-center w-full h-full'>
+                <div className='px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-25 flex justify-between items-center w-full h-full'>
                     <Link href='/' 
                         onClick = {() => setMainMenuMobileActive(false)}
                         className={classNames({
@@ -106,7 +106,7 @@ export default function Header({ tags }: { tags: PostTagsType[] | null }) {
                             <p className="text-base font-thin">NEUROLOGOPEDIA</p>
                         </div>
                     </Link>
-                    <nav className={classNames({['flex']: true, ['absolute left-1/2 translate-x-[-50%] top-0 text-black flex-col h-screen w-screen py-[10vh] bg-white px-25 gap-25']: isMobileView, ['hidden']: isMobileView && !isMainMobileMenuActive ,['flex-row w-1/2 ml-auto h-full justify-between']: !isMobileView})}>
+                    <nav className={classNames({['flex']: true, ['absolute left-1/2 translate-x-[-50%] top-0 text-black flex-col h-screen w-screen py-[10vh] bg-white px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-25 gap-4 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 2xl:gap-25']: isMobileView, ['hidden']: isMobileView && !isMainMobileMenuActive ,['flex-row w-1/2 ml-auto h-full justify-between']: !isMobileView})}>
                         {LINKS.map((item, index) => {
                             return (
                                 <div key={index} className={classNames({["h-full"]: !isMobileView})}>
@@ -138,7 +138,7 @@ export default function Header({ tags }: { tags: PostTagsType[] | null }) {
                                                 [styles.dropdownClose]: !isMobileView,
                                                 [styles.dropdownOpen]: isDropdownOpened,
                                                 [styles.dropdownMainTop]: LPHeaderTop,
-                                                ['flex flex-col gap-10 pt-15 pl-5']: isMobileView,
+                                                ['flex flex-col gap-2 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-10 pt-4 sm:pt-6 md:pt-8 lg:pt-10 xl:pt-12 2xl:pt-15 pl-2 sm:pl-3 md:pl-4 lg:pl-4 xl:pl-5 2xl:pl-5']: isMobileView,
                                             })}>
                                                 {item.offerPages.map((element, index) => {
                                                     return (
