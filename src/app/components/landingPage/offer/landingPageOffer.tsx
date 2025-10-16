@@ -4,11 +4,9 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import classes from './landingPageOffer.module.css';
 import styles from '../../../page.module.css';
-import Markup from '../../markup/markup';
 import { useState } from 'react';
 import Image from 'next/image';
 import LandingPageUnitTitle from '../unitTitle/landingPageUnitTitle';
-import LandingPageButton from '../../landingPageButton/landingPageButton';
 import classNames from 'classnames';
 import LandingPageDescription from '../common/description/landingPageDescription';
 

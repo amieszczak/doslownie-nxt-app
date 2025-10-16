@@ -1,6 +1,5 @@
 import LandingPageButton from "@/app/components/landingPageButton/landingPageButton";
 import Markup from "@/app/components/markup/markup";
-import classNames from "classnames";
 
 export default function LandingPageDescription({ title, description, href, buttonTitle, variant = 'left' }: { title?: string, description?: string, href?: string, buttonTitle?: string, variant?: string }) {
  

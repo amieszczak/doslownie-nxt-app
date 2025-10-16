@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/header/header";
-import Footer from "./components/footer/footer";
+// import Footer from "./components/footer/footer";
 import { Poppins } from "next/font/google";
 import getTags from "@/integrations/wordpress/getTags";
 import { PostTagsType } from "./types/post-tags";
