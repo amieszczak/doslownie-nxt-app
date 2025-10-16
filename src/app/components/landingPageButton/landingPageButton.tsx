@@ -16,7 +16,7 @@ export default function LandingPageButton({href, title, variant}: {href: string,
     }
 
     return(
-        <Link href={href} className={classNames({['uppercase border border-black rounded-sm w-max h-10 px-5 flex items-center text-sm sm:text-base md:text-lg xl:text-xl hover:text-white hover:bg-black']:true, [position]: true})}>
+        <Link href={href} className={classNames({['uppercase border border-black rounded-sm w-max h-8 sm:h-10 px-3 sm:px-5 flex items-center text-sm sm:text-base md:text-lg xl:text-xl hover:text-white hover:bg-black']:true, [position]: true})}>
             {title}
         </Link>
     )    

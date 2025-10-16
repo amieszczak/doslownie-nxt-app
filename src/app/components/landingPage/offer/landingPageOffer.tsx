@@ -26,19 +26,11 @@ export default function LandingPageOffer() {
     const currentElement = OFFER_CONTENT.find(item => item.id == offerId);
 
     return(
-        <div id="offer" className="bg-white">
+        <div id="offer" className="bg-white pb-8 sm:pb-0">
             <div className={classNames({["w-screen sm:h-[50vh] md:h-[75vh] relative flex flex-col-reverse sm:flex-row justify-between"]:true, [styles.pageMaxWidth]: true})}>                  
-                {/* <div className="w-1/2 flex items-center">
-                    <Markup variant={'left'} title={'oferta'} top={true}/>
-                    <div className="flex flex-col px-25 gap-15">
-                        <h2 className="text-4xl font-thin italic">{currentElement && currentElement.title}</h2>               
-                        <p >{currentElement && currentElement.description}</p>
-                        <LandingPageButton href={OFFER_CONTENT.find(item => item.id == offerId)?.href ?? '#'} title={"dowiedz się więcej"} variant={'right'}/>
-                    </div>            
-                </div> */}
                 <LandingPageDescription title={currentElement && currentElement.title} description={currentElement && currentElement.description} href={OFFER_CONTENT.find(item => item.id == offerId)?.href} />
                 <div className="sm:w-1/2 h-[35vh] sm:h-full overflow-hidden">
-                    <LandingPageUnitTitle title={'Oferta dosłownie'} />
+                    <LandingPageUnitTitle title={'OFERTA DOSŁOWNIE'} mobileTitle={'OFERTA'} borderPosition={'right'} />
                     <Swiper
                     className="h-full"
                     modules={[Autoplay, Pagination]}                    
