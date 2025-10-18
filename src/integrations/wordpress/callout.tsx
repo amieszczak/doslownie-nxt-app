@@ -12,11 +12,21 @@ const fetchAPI = async (query: string, variables = {}) => {
             next: { revalidate: 60 }
         });
 
+        if (!responseJSON.ok) {
+            throw new Error(`HTTP error! status: ${responseJSON.status}`);
+        }
+
         const response = await responseJSON?.json();
+
+        if (response?.errors) {
+            console.error('GraphQL errors:', response.errors);
+            return null;
+        }
 
         return response?.data;
     } catch (error) {
-        console.error(error);
+        console.error('Fetch API error:', error);
+        return null;
     }
 };
 
