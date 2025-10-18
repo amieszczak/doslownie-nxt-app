@@ -1,12 +1,11 @@
 'use client';
-import Markup from "../../markup/markup";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import Image from "next/image";
 import { useState } from "react";
 import LandingPageUnitTitle from "../unitTitle/landingPageUnitTitle";
-import LandingPageButton from "../../landingPageButton/landingPageButton";
+import LandingPageDescription from "../common/description/landingPageDescription";
 import styles from '../../../page.module.css';
 import classNames from "classnames";
 
@@ -24,16 +23,17 @@ export default function LandingPageSpecialistsComponent() {
     const currentElement = SPECIALISTS_DATA.find(item => item.id == specialistId);
 
     return(
-        <div className="bg-white">
-            <div className={classNames({["w-screen h-[75vh] relative flex justify-between"]: true, [styles.pageMaxWidth]: true})}>                                  
-                <Markup variant={'left'} title={'o nas'} top={true}/>                
-                <div className="w-1/2 flex  flex-col justify-center px-25 gap-15">
-                    <h2 className="text-4xl font-thin italic">{currentElement && currentElement.name}</h2>
-                    <p>{currentElement && currentElement.description}</p>
-                    <LandingPageButton href={'o-nas'} title={'dowiedz się więcej'} variant={'right'}/>
-                </div>
-                <div className="w-1/2 overflow-hidden">     
-                <LandingPageUnitTitle title="nasze terapeutki mowy"/>
+        <div className="bg-white pb-8 sm:pb-0">
+            <div className={classNames({["w-screen sm:h-[50vh] md:h-[75vh] relative flex flex-col-reverse sm:flex-row justify-between"]: true, [styles.pageMaxWidth]: true})}>                                  
+                <LandingPageDescription 
+                    title={currentElement && currentElement.name} 
+                    description={currentElement && currentElement.description} 
+                    href={'o-nas'} 
+                    buttonTitle={'dowiedz się więcej'} 
+                    variant={'right'} 
+                />
+                <div className="sm:w-1/2 h-[35vh] sm:h-full overflow-hidden">     
+                <LandingPageUnitTitle title="nasze terapeutki mowy" borderPosition="right"/>
                 <Swiper
                     className="h-full"
                     modules={[Autoplay, Pagination]}
