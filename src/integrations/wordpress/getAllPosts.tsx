@@ -5,8 +5,13 @@ import { AllPostsType } from '@/app/types/all-posts';
 
 const getAllPosts = async (first = 1000): Promise<AllPostsType[]> => {
     const response = await fetchAPI(allPosts, { first });
-    const posts:AllPostsQl[] = response?.posts?.edges;
-
+    
+    if (!response || !response.posts || !response.posts.edges) {
+        console.warn('No posts data received from WordPress API');
+        return [];
+    }
+    
+    const posts: AllPostsQl[] = response.posts.edges;
 
     return posts.map((post: AllPostsQl) => ({        
         content: post?.node?.content,
@@ -16,14 +21,14 @@ const getAllPosts = async (first = 1000): Promise<AllPostsType[]> => {
         slug: post?.node?.slug,    
         featuredImage: post?.node?.featuredImage?.node?.sourceUrl,
         author: post?.node?.author?.node?.name || 'no author',
-        categories: post?.node?.categories?.edges.map(category => ({
+        categories: post?.node?.categories?.edges?.map(category => ({
             name: category.node.name,
             slug: category.node.slug,
-        })),
-        tags: post?.node?.tags?.edges.map(category => ({
+        })) || [],
+        tags: post?.node?.tags?.edges?.map(category => ({
             name: category.node.name,
             slug: category.node.slug,
-        })),
+        })) || [],
     }));
 };
 
