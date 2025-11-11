@@ -30,8 +30,7 @@ export default function LandingPageSpecialistsComponent() {
                     description={currentElement && currentElement.description} 
                     href={'o-nas'} 
                     buttonTitle={'dowiedz się więcej'} 
-                    variant={'right'} 
-                />
+                />                
                 <div className="sm:w-1/2 h-[35vh] sm:h-full overflow-hidden">     
                 <LandingPageUnitTitle title="nasze terapeutki mowy" borderPosition="right"/>
                 <Swiper

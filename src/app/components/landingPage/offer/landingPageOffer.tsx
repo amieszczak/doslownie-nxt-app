@@ -30,20 +30,20 @@ export default function LandingPageOffer() {
                 <div className="sm:w-1/2 h-[35vh] sm:h-full overflow-hidden">
                     <LandingPageUnitTitle title={'OFERTA DOSŁOWNIE'} mobileTitle={'OFERTA'} borderPosition={'right'} />
                     <Swiper
-                    className="h-full"
-                    modules={[Autoplay, Pagination]}                    
-                    slidesPerView={1}
-                    loop={true}
-                    autoplay={{
-                        delay: 5000,
-                        disableOnInteraction: true,
-                    }}                    
+                        className="h-full"
+                        modules={[Autoplay, Pagination]}                    
+                        slidesPerView={1}
+                        loop={true}
+                        autoplay={{
+                            delay: 5000,
+                            disableOnInteraction: true,
+                        }}                    
                     onActiveIndexChange={(swiper) => setOfferId(swiper.realIndex + 1)}
                     >                        
                         {OFFER_CONTENT.map((item, index) => {
                             return (
                             <SwiperSlide key={index}>
-                                <Image                      
+                                <Image
                                 src={item.photoSrc}
                                 className={classes.photo}
                                 width={1000}
