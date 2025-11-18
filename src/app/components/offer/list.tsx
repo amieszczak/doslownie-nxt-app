@@ -1,9 +1,9 @@
 export default function List({title, items}: {title: string, items: string[]}) {
 
   return (
-    <section className='flex flex-col items-center'> 
-      <h2 className='text-3xl mt-25'>{title}</h2>
-      <div className='px-25 py-15'>
+    <section className='px-10 sm:px-15 md:px-25 flex flex-col items-center mt-10 sm:mt-15 md:mt-25'> 
+      <h2 className='text-2xl font-bold'>{title}</h2>
+      <div className='py-15'>
         <ul>
           {items.map((item, index) => {
               return (
