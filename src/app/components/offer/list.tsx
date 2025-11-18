@@ -7,7 +7,7 @@ export default function List({title, items}: {title: string, items: string[]}) {
         <ul>
           {items.map((item, index) => {
               return (
-                  <li className='text-lg list-disc py-2' key={index}>{item}</li>
+                  <li className='text-xs md:text-sm xl:text-base list-disc py-2' key={index}>{item}</li>
               )
           })}
         </ul>
